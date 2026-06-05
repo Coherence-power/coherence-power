@@ -1,3 +1,3 @@
 # eflex
 
-Landing page for e-flex.
+Landing page for eFlex.
