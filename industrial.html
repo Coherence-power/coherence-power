@@ -118,10 +118,10 @@
   h1 {
     font-family: 'Fraunces', serif;
     font-weight: 300;
-    font-size: clamp(32px, 5vw, 56px);
-    line-height: 1.08;
-    letter-spacing: -0.024em;
-    margin: 0 0 48px;
+    font-size: clamp(36px, 4.6vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.026em;
+    margin: 0 0 30px;
     color: var(--ink);
   }
   h1 em {
@@ -132,23 +132,42 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--accent);
+    display: inline-block;
+    padding-right: 0.12em;
+    margin-right: -0.12em;
   }
 
   .lede {
     font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: var(--fs-md);
+    line-height: 1.65;
     color: var(--ink-soft);
-    max-width: 560px;
-    margin: -32px 0 48px;
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  /* ---------- two-column composition: pitch leads, form acts ---------- */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 24px 72px;
+    align-items: start;
+  }
+
+  .form-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 18px;
   }
 
   /* ---------- form card ---------- */
   .form-wrap {
     position: relative;
-    max-width: 660px;
-    padding: 44px 40px 36px;
+    padding: 40px 36px 32px;
     background: var(--card);
     border: 1px solid var(--rule-soft);
     border-radius: 18px;
@@ -183,9 +202,13 @@
   }
 
   /* ---------- responsive ---------- */
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+  }
   @media (max-width: 860px) {
     .wrap { padding: 28px 22px 40px; }
     nav { padding-bottom: 48px; flex-wrap: wrap; gap: 8px; }
+    h1 { margin-bottom: 24px; }
     .form-wrap { padding: 32px 22px 28px; border-radius: 14px; }
   }
 
@@ -207,12 +230,18 @@
     <a class="back reveal d1" href="index.html">← Back</a>
   </nav>
 
-  <div class="eyebrow reveal d1">Industrial Plant Owners</div>
-  <h1 class="reveal d2">Tell us about your facility.</h1>
-  <p class="lede reveal d2">For plant owners, operators, infrastructure investors, OEMs, and EPCs.</p>
+  <div class="eyebrow reveal d1">Plant owners/operators, equipment manufacturers, &amp; engineering consultants</div>
 
-  <div class="form-wrap reveal d3">
-    <iframe data-tally-src="https://tally.so/embed/PdBoRQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="284" frameborder="0" marginheight="0" marginwidth="0" title="Industrial Plant Owners"></iframe>
+  <div class="hero-grid">
+    <div class="pitch">
+      <h1 class="reveal d2">Energy flexibility is <em>untouched revenue</em>.</h1>
+      <p class="lede reveal d2">Energy services, TOU pricing, and demand response can drive real revenue, but simply signing up for programs doesn't guarantee a positive outcome. Holistic planning is takes many months and costs hundreds of thousands of dollars. We deliver tailor-made energy analysis to help value flexibility with best in class in speed, powered by software. We'll find a path to NPV-positive investments with guarantees around plant safety and product quality.</p>
+    </div>
+
+    <div class="form-wrap reveal d3">
+      <h2 class="form-title">Tell us about your facility or process.</h2>
+      <iframe data-tally-src="https://tally.so/embed/PdBoRQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="284" frameborder="0" marginheight="0" marginwidth="0" title="Industrial Plant Owners"></iframe>
+    </div>
   </div>
 
   <footer>
