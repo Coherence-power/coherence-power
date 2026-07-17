@@ -1,4 +1,4 @@
-export var words1 = ['Design', 'Operate', 'Plan', 'Site'];
+export var words1 = ['Design', 'Operate', 'Plan', 'Upgrade'];
 
 export var words2 = [
   'desalination', 'chlor-alkali', 'green hydrogen', 'water treatment',
