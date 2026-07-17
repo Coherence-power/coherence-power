@@ -3,28 +3,32 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>eFlex</title>
+<title>Coherence Power</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --ink:       #0a1a2f;
-    --ink-soft:  #2a3d59;
-    --muted:     #6b7d96;
-    --rule:      #d6dee9;
-    --paper:     #f4f6fa;
-    --paper-2:   #eaeef5;
-    --accent:    #1558ff;
-    --accent-2:  #0a3bb8;
+    --ink:       #061127;
+    --ink-soft:  #35496a;
+    --muted:     #647692;
+    --rule:      #d0dbea;
+    --rule-soft: #e2e9f3;
+    --paper:     #eef2f9;
+    --paper-2:   #e6ecf6;
+    --card:      #ffffff;
+    --accent:    #1655f0;
+    --accent-2:  #062db3;
+    --cyan:      #12c2e9;
+    --grad:      linear-gradient(120deg, #1655f0 0%, #12b6ea 55%, #16d1c9 100%);
 
-    --fs-lg:  clamp(44px, 7vw, 88px);
+    --fs-lg:  clamp(44px, 7vw, 92px);
     --fs-md:  19px;
     --fs-sm:  11px;
   }
 
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  html, body { margin: 0; padding: 0; overflow-x: hidden; }
   body {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 400;
@@ -33,11 +37,14 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     line-height: 1.5;
-    /* subtle grid paper texture */
+    /* layered: soft energy glow + fine grid paper texture */
     background-image:
-      linear-gradient(to right, rgba(21,88,255,0.035) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(21,88,255,0.035) 1px, transparent 1px);
-    background-size: 56px 56px;
+      radial-gradient(1100px 620px at 78% -8%, rgba(22,85,240,0.14), transparent 60%),
+      radial-gradient(760px 520px at 8% 4%, rgba(18,194,233,0.10), transparent 55%),
+      linear-gradient(to right, rgba(6,17,39,0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(6,17,39,0.045) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 58px 58px, 58px 58px;
+    background-attachment: fixed, fixed, scroll, scroll;
   }
 
   .wrap {
@@ -56,18 +63,25 @@
   .mark {
     font-family: 'JetBrains Mono', monospace;
     font-size: var(--fs-sm);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
+    font-weight: 500;
     color: var(--ink);
+    display: flex;
+    align-items: center;
   }
   .mark .dot {
     display: inline-block;
-    width: 7px; height: 7px;
+    width: 8px; height: 8px;
     border-radius: 50%;
-    background: var(--accent);
-    margin-right: 8px;
-    transform: translateY(-1px);
-    box-shadow: 0 0 0 3px rgba(21,88,255,0.12);
+    background: var(--grad);
+    margin-right: 10px;
+    box-shadow: 0 0 0 4px rgba(22,85,240,0.14);
+    animation: pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(22,85,240,0.14); }
+    50%      { box-shadow: 0 0 0 6px rgba(18,194,233,0.06); }
   }
   .meta {
     font-family: 'JetBrains Mono', monospace;
@@ -85,41 +99,50 @@
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
+    font-weight: 500;
     text-transform: uppercase;
     color: var(--accent-2);
-    margin-bottom: 32px;
+    margin-bottom: 34px;
     display: flex;
     align-items: center;
     gap: 14px;
   }
   .eyebrow::before {
     content: "";
-    width: 32px;
-    height: 1px;
-    background: var(--accent-2);
+    width: 38px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--grad);
   }
   h1 {
     font-family: 'Fraunces', serif;
     font-weight: 300;
-    font-size: clamp(44px, 7vw, 88px);
-    line-height: 1.02;
-    letter-spacing: -0.025em;
-    margin: 0 0 40px;
-    max-width: 900px;
+    font-size: var(--fs-lg);
+    line-height: 1.0;
+    letter-spacing: -0.028em;
+    margin: 0 0 42px;
+    max-width: 940px;
     color: var(--ink);
   }
   h1 em {
     font-style: italic;
     font-weight: 400;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: var(--accent);
+    display: inline-block;
+    padding-right: 0.12em;
+    margin-right: -0.12em;
   }
   .lede {
     font-family: 'Fraunces', serif;
-    font-size: 19px;
-    line-height: 1.55;
+    font-size: var(--fs-md);
+    line-height: 1.6;
     color: var(--ink-soft);
-    max-width: 620px;
+    max-width: 640px;
     margin: 0;
     text-align: left;
   }
@@ -130,11 +153,11 @@
     vertical-align: middle;
     height: 1.9em;
     min-width: 2em;
-    background: #fff;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 0 8px;
-    box-shadow: 0 1px 4px rgba(10,26,47,0.07);
+    background: linear-gradient(180deg, #ffffff, #f2f6ff);
+    border: 1px solid rgba(22,85,240,0.22);
+    border-radius: 6px;
+    padding: 0 10px;
+    box-shadow: 0 2px 10px rgba(22,85,240,0.12), inset 0 0 0 1px rgba(255,255,255,0.6);
   }
   .word-flip-inner {
     display: flex;
@@ -148,6 +171,7 @@
     height: 1.9em;
     color: var(--accent);
     font-style: italic;
+    font-weight: 500;
     white-space: nowrap;
   }
 
@@ -161,8 +185,9 @@
     letter-spacing: 0.1em;
     color: var(--muted);
     text-align: right;
-    line-height: 1.9;
-    border-right: 1px solid var(--rule);
+    line-height: 2.0;
+    border-right: 2px solid transparent;
+    border-image: var(--grad) 1;
     padding-right: 16px;
   }
   .spec b { color: var(--ink); font-weight: 500; }
@@ -191,45 +216,109 @@
     color: var(--ink);
   }
 
-  /* ---------- audience buttons ---------- */
+  /* ---------- audience card ---------- */
   .audience-btns {
-    padding: 32px 0 64px;
-    border-top: 1px solid var(--rule);
+    position: relative;
+    margin: 20px auto 0;
+    max-width: 680px;
+    padding: 48px 44px 40px;
+    background: var(--card);
+    border: 1px solid var(--rule-soft);
+    border-radius: 18px;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.9) inset,
+      0 24px 60px -28px rgba(6,17,39,0.28),
+      0 8px 24px -16px rgba(22,85,240,0.18);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 14px;
+    overflow: hidden;
   }
-  .audience-btns a {
-    display: block;
-    width: 320px;
-    background: var(--accent);
+  /* gradient hairline along the top of the card */
+  .audience-btns::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--grad);
+  }
+  .audience-btns a.segment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    background: var(--grad);
     color: #fff;
     border: 0;
+    border-radius: 10px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
-    letter-spacing: 0.12em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 18px 32px;
-    text-align: center;
+    padding: 20px 26px;
+    text-align: left;
     text-decoration: none;
     cursor: pointer;
-    transition: background 0.2s;
-    white-space: nowrap;
+    line-height: 1.4;
+    box-shadow: 0 10px 26px -12px rgba(22,85,240,0.6);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
   }
-  .audience-btns a:hover { background: var(--accent-2); }
+  .audience-btns a.segment .arw {
+    transition: transform 0.22s ease;
+    font-size: 16px;
+    flex: 0 0 auto;
+  }
+  .audience-btns a.segment:hover {
+    transform: translateY(-2px);
+    filter: saturate(1.12);
+    box-shadow: 0 18px 36px -14px rgba(22,85,240,0.7);
+  }
+  .audience-btns a.segment:hover .arw { transform: translateX(5px); }
+  .audience-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    line-height: 1.7;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    margin: 10px 0 20px;
+    width: 100%;
+  }
+  .audience-sub + .audience-sub {
+    margin-top: -18px;
+  }
   .audience-prompt {
     font-family: 'Fraunces', serif;
     font-style: italic;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 22px;
     color: var(--ink);
-    margin: 0 0 16px;
+    margin: 0 0 20px;
   }
+  .audience-btns > div { width: 100%; }
+  .audience-btns a.stay {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 3px;
+    margin-top: 6px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .audience-btns a.stay:hover { color: var(--accent); border-color: var(--accent); }
 
   /* ---------- footer ---------- */
   footer {
-    padding-top: 48px;
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -244,12 +333,14 @@
 
   /* ---------- responsive ---------- */
   @media (max-width: 860px) {
-    .wrap { padding: 28px 24px 40px; }
-    nav { padding-bottom: 80px; }
-    header.hero { padding-bottom: 96px; }
+    .wrap { padding: 28px 22px 40px; }
+    nav { padding-bottom: 64px; flex-wrap: wrap; gap: 8px; }
+    .meta { font-size: 10px; letter-spacing: 0.1em; }
+    h1 { margin-bottom: 34px; }
+    header.hero { padding-bottom: 72px; }
     .spec { display: none; }
-    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    section.news .inner { flex-direction: column; gap: 24px; }
+    .audience-btns { padding: 36px 22px 32px; border-radius: 14px; }
+    .audience-btns a.segment { font-size: 12px; padding: 18px 20px; letter-spacing: 0.06em; }
     footer { flex-direction: column; gap: 12px; align-items: flex-start; }
   }
 
@@ -268,7 +359,7 @@
 <div class="wrap">
 
   <nav>
-    <div class="mark reveal d1"><span class="dot"></span>eFlex</div>
+    <div class="mark reveal d1"><span class="dot"></span>Coherence Power</div>
     <div class="meta reveal d1">Palo Alto, CA · Est. 2026</div>
   </nav>
 
@@ -278,28 +369,33 @@
       <div>lat. <b>37.4275°N</b></div>
       <div>lon. <b>122.1697°W</b></div>
     </div>
-    <div class="eyebrow reveal d1">Industrial Energy Intelligence</div>
+    <div class="eyebrow reveal d1">Make coherent decisions between the grid and the industrial base.</div>
     <h1 class="reveal d2">
-      Industry's co-pilot<br/>
-      for the <em>energy&#8209;transition</em>.
+      Energy intelligence<br>
+      <em>behind-the-meter</em>.
     </h1>
     <p class="lede reveal d3">
       <span class="word-flip" id="flip1"><span class="word-flip-inner"></span></span>
       your
       <span class="word-flip" id="flip2"><span class="word-flip-inner"></span></span>
-      facility to adapt to time&#8209;varying electricity prices and product volatility.
+      facility to unlock flexibility without disrupting product delivery or quality.
     </p>
   </header>
 
   <section class="audience-btns reveal d4">
-    <p class="audience-prompt">Are you a(n)...</p>
-    <a href="industrial.html">Industrial Asset Owner →</a>
-    <a href="municipal.html">Municipal Asset Owner →</a>
-    <a href="interested.html">Interested Party →</a>
+    <div>
+      <a class="segment" href="suppliers.html"><span>Are you a power supplier, trader, or developer?</span><span class="arw">→</span></a>
+      <p class="audience-sub">Energy Utilities · Demand Aggregators · On-site Power Developers</p>
+    </div>
+    <div>
+      <a class="segment" href="industrial.html"><span>Do you own or operate an industrial site?</span><span class="arw">→</span></a>
+      <p class="audience-sub">Plant Owner/Operators · Equipment Manufacturers · Engineering Consultants</p>
+    </div>
+    <a class="stay" href="interested.html">Just keep me in the loop →</a>
   </section>
 
   <footer>
-    <div>© eFlex · 2026</div>
+    <div>© Coherence Power · 2026</div>
   </footer>
 
 </div>

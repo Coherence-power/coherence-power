@@ -1,3 +1,3 @@
-# eflex
+# Coherence Power
 
-Landing page for eFlex.
+Landing page for Coherence Power.
