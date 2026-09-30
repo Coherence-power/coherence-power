@@ -9,6 +9,6 @@ export var words2 = [
   'sodium hypochlorite', 'oxygen generation', 'nitrogen generation', 'ozone generation',
   'hydrogen peroxide', 'seawater electrolysis', 'CO₂ electrolysis', 'hydropower', 
   'nanofiltration', 'ultrafiltration', 'microfiltration','water reuse', 'groundwater pumping', 
-  'agricultural reuse', 'industrial waste', 'wastewater reuse','electrochemical synthesis',
+  'agricultural reuse', 'industrial waste',
   'battery storage', 'fuel cell', 'electrochemical reactor'
 ];
