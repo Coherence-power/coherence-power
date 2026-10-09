@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How it works: risk-aware optimization for industrial plants | Coherence Power</title>
+  <meta name="description" content="Coherence Power uses risk-aware optimization across millions of scenarios so your plant's operating plans and energy investments hold up, no matter what happens. Developed at Stanford and the U.S. DOE.">
+  <meta name="theme-color" content="#1b1c1d">
+  <meta property="og:title" content="How Coherence Power works">
+  <meta property="og:description" content="Risk-aware optimization across millions of scenarios, built on decades of Stanford and DOE research.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.coherencepower.com/how-it-works.html">
+  <meta property="og:image" content="https://www.coherencepower.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>(function(){var d=document.documentElement,t=null;d.classList.add('js');try{t=localStorage.getItem('cp-theme');}catch(e){}if(t==='light'){d.setAttribute('data-theme','light');var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content','#f6f7f7');}})();</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="container nav" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Coherence Power home">
+        <svg viewBox="0 0 34 22" fill="none" aria-hidden="true">
+          <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--chart-accent)"/>
+          <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" opacity=".9" style="stroke: var(--chart-steel)"/>
+        </svg>
+        Coherence Power
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="how-it-works.html" aria-current="page">How it works</a></li>
+        <li><a href="index.html#results">Results</a></li>
+        <li><a href="index.html#industries">Industries</a></li>
+      </ul>
+      <div class="nav-cta">
+<button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg></button>
+        <a class="btn btn--primary" href="index.html#contact">Request a site assessment</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="page-hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="label">How it works</p>
+          <h1 id="hero-title">Plans that hold up, <span class="accent">no matter what happens.</span></h1>
+          <p class="lead">Coherence uses risk-aware optimization to plan your plant's operations and energy investments against millions of possible futures, not a single forecast. You get decisions that stay sound when prices spike, markets shift or the process surprises you.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="index.html#contact">Request a site assessment
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#uncertainty">See a worked example</a>
+          </div>
+          <p class="hero-meta"><span>Risk-aware optimization</span><span>Millions of scenarios</span><span>Developed at Stanford and the U.S. DOE</span></p>
+        </div>
+
+        <figure class="chart-card" aria-labelledby="fan-title">
+          <header>
+            <h2 id="fan-title">Tomorrow's power price: possible futures</h2>
+            <span class="tag">Illustrative</span>
+          </header>
+          <svg class="fan-chart" viewBox="0 0 640 250" role="img" aria-label="Illustrative chart of many possible price paths for tomorrow. Most follow a daily pattern with an evening peak, a few contain sharp, unlikely but costly price spikes, and a single dashed forecast line plans for none of them.">
+            <g stroke-width="1" style="stroke: var(--chart-grid)">
+              <line x1="40" y1="171" x2="620" y2="171"/><line x1="40" y1="122" x2="620" y2="122"/><line x1="40" y1="73" x2="620" y2="73"/>
+            </g>
+            <line x1="40" y1="220" x2="620" y2="220" style="stroke: var(--chart-axis)"/>
+            <text x="40" y="242">00:00</text><text x="185" y="242" text-anchor="middle">06:00</text><text x="330" y="242" text-anchor="middle">12:00</text><text x="475" y="242" text-anchor="middle">18:00</text><text x="620" y="242" text-anchor="end">24:00</text>
+            <text x="44" y="14">$/MWh</text>
+            <path class="scn" d="M40,166 64,174 88,187 112,186 137,180 161,169 185,178 209,184 233,171 258,163 282,147 306,139 330,140 354,143 378,122 402,127 427,127 451,118 475,101 499,102 523,127 548,150 572,163 596,164 620,161"/>
+            <path class="scn" d="M40,173 64,187 88,187 112,197 137,192 161,193 185,185 209,153 233,154 258,147 282,158 306,157 330,148 354,148 378,143 402,140 427,138 451,114 475,105 499,92 523,120 548,140 572,157 596,158 620,170"/>
+            <path class="scn" d="M40,146 64,147 88,151 112,161 137,154 161,150 185,137 209,140 233,134 258,128 282,123 306,120 330,117 354,121 378,126 402,122 427,101 451,63 475,36 499,36 523,65 548,98 572,123 596,132 620,128"/>
+            <path class="scn" d="M40,159 64,157 88,161 112,181 137,170 161,148 185,141 209,148 233,148 258,142 282,118 306,113 330,113 354,102 378,106 402,90 427,88 451,71 475,47 499,43 523,72 548,106 572,145 596,160 620,168"/>
+            <path class="scn" d="M40,163 64,159 88,161 112,165 137,163 161,158 185,149 209,151 233,149 258,154 282,134 306,119 330,120 354,123 378,130 402,122 427,105 451,63 475,43 499,57 523,107 548,124 572,142 596,165 620,166"/>
+            <path class="scn" d="M40,170 64,169 88,175 112,194 137,192 161,200 185,188 209,200 233,197 258,178 282,159 306,167 330,175 354,162 378,152 402,156 427,151 451,137 475,129 499,132 523,138 548,153 572,151 596,162 620,170"/>
+            <path class="scn" d="M40,172 64,187 88,178 112,165 137,159 161,150 185,149 209,155 233,151 258,151 282,155 306,162 330,165 354,155 378,146 402,142 427,114 451,91 475,68 499,63 523,100 548,145 572,154 596,168 620,160"/>
+            <path class="scn" d="M40,176 64,196 88,189 112,194 137,197 161,197 185,185 209,175 233,165 258,178 282,178 306,192 330,184 354,173 378,174 402,166 427,153 451,129 475,124 499,132 523,154 548,156 572,161 596,171 620,175"/>
+            <path class="scn" d="M40,159 64,165 88,176 112,179 137,162 161,157 185,155 209,153 233,149 258,141 282,142 306,136 330,130 354,133 378,135 402,135 427,126 451,90 475,86 499,86 523,114 548,145 572,159 596,156 620,160"/>
+            <path class="scn" d="M40,166 64,162 88,168 112,178 137,185 161,188 185,191 209,172 233,163 258,158 282,141 306,143 330,134 354,126 378,138 402,144 427,135 451,101 475,70 499,85 523,101 548,134 572,155 596,167 620,173"/>
+            <path class="scn" d="M40,165 64,180 88,171 112,176 137,172 161,173 185,169 209,157 233,159 258,144 282,150 306,155 330,146 354,152 378,151 402,138 427,118 451,115 475,93 499,82 523,99 548,131 572,155 596,166 620,179"/>
+            <path class="scn" d="M40,171 64,164 88,169 112,182 137,171 161,178 185,178 209,173 233,170 258,171 282,165 306,141 330,144 354,142 378,131 402,123 427,108 451,84 475,87 499,97 523,118 548,139 572,146 596,153 620,162"/>
+            <path class="scn" d="M40,161 64,159 88,165 112,173 137,178 161,165 185,152 209,143 233,136 258,129 282,129 306,124 330,132 354,132 378,135 402,123 427,115 451,92 475,69 499,62 523,98 548,136 572,147 596,165 620,165"/>
+            <path class="scn" d="M40,169 64,165 88,171 112,178 137,159 161,154 185,127 209,129 233,135 258,135 282,122 306,124 330,121 354,118 378,127 402,122 427,115 451,102 475,74 499,72 523,99 548,136 572,169 596,170 620,173"/>
+            <path class="scn" d="M40,184 64,184 88,182 112,178 137,176 161,173 185,180 209,178 233,176 258,171 282,162 306,152 330,136 354,157 378,149 402,145 427,115 451,92 475,93 499,93 523,121 548,138 572,164 596,171 620,175"/>
+            <path class="scn" d="M40,166 64,165 88,160 112,164 137,173 161,169 185,161 209,160 233,156 258,141 282,148 306,148 330,158 354,156 378,155 402,152 427,140 451,98 475,80 499,84 523,92 548,124 572,158 596,162 620,174"/>
+            <path class="scn" d="M40,164 64,178 88,175 112,181 137,177 161,175 185,173 209,158 233,145 258,141 282,144 306,146 330,137 354,113 378,118 402,120 427,111 451,94 475,77 499,78 523,92 548,124 572,148 596,169 620,169"/>
+            <path class="scn" d="M40,161 64,168 88,181 112,181 137,183 161,174 185,176 209,179 233,174 258,154 282,151 306,146 330,143 354,138 378,129 402,116 427,122 451,91 475,76 499,84 523,91 548,124 572,129 596,137 620,156"/>
+            <path class="scn" d="M40,153 64,175 88,176 112,175 137,180 161,159 185,158 209,156 233,152 258,152 282,150 306,141 330,132 354,131 378,127 402,130 427,108 451,86 475,60 499,69 523,100 548,129 572,157 596,143 620,151"/>
+            <path class="scn" d="M40,152 64,147 88,152 112,167 137,171 161,164 185,166 209,171 233,173 258,170 282,161 306,158 330,150 354,122 378,109 402,118 427,105 451,85 475,69 499,65 523,97 548,131 572,152 596,161 620,156"/>
+            <path class="scn" d="M40,165 64,175 88,170 112,170 137,164 161,165 185,180 209,170 233,164 258,156 282,163 306,156 330,157 354,157 378,149 402,140 427,135 451,127 475,124 499,123 523,131 548,153 572,184 596,192 620,187"/>
+            <path class="scn" d="M40,183 64,184 88,194 112,197 137,197 161,200 185,195 209,193 233,185 258,170 282,163 306,160 330,163 354,175 378,172 402,163 427,163 451,138 475,129 499,129 523,149 548,176 572,169 596,185 620,180"/>
+            <path class="scn" d="M40,167 64,172 88,165 112,151 137,161 161,161 185,151 209,155 233,146 258,149 282,139 306,132 330,121 354,118 378,128 402,118 427,115 451,85 475,54 499,56 523,92 548,115 572,136 596,158 620,165"/>
+            <path class="scn scn--spike" d="M40,181 64,181 88,175 112,170 137,182 161,162 185,150 209,153 233,150 258,151 282,159 306,158 330,154 354,144 378,140 402,140 427,123 451,113 475,28 499,38 523,120 548,161 572,180 596,182 620,179"/>
+            <path class="scn scn--spike" d="M40,182 64,177 88,161 112,143 137,152 161,169 185,170 209,173 233,151 258,144 282,148 306,137 330,132 354,145 378,145 402,140 427,125 451,46 475,28 499,83 523,117 548,149 572,152 596,158 620,160"/>
+            <path class="scn scn--spike" d="M40,169 64,172 88,165 112,163 137,163 161,166 185,162 209,161 233,141 258,150 282,150 306,137 330,138 354,126 378,127 402,125 427,117 451,63 475,28 499,73 523,101 548,126 572,139 596,147 620,147"/>
+            <path class="fcst" d="M40,172 64,175 88,176 112,177 137,176 161,175 185,172 209,169 233,165 258,161 282,157 306,153 330,150 354,148 378,145 402,141 427,130 451,111 475,94 499,98 523,120 548,145 572,161 596,168 620,172"/>
+            <text x="488" y="20" text-anchor="middle" style="fill: var(--chart-peak-label)">unlikely, high-cost spikes</text>
+          </svg>
+          <figcaption class="chart-legend">
+            <span><i class="k-scn"></i>Possible futures</span>
+            <span><i class="k-spike"></i>Price-spike futures</span>
+            <span><i class="k-fcst"></i>Single forecast</span>
+          </figcaption>
+          <div class="chart-readout">
+            <div><b>Millions</b><span>Futures tested</span></div>
+            <div><b>1</b><span>Plan that works</span></div>
+            <div><b>0</b><span>Bets on a forecast</span></div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 01 RISK-AWARE ============ -->
+    <section class="section" id="risk-aware" aria-labelledby="risk-title">
+      <div class="container split">
+        <div>
+          <div class="section-head reveal">
+            <p class="label">01 <span>/ Risk-aware optimization</span></p>
+            <h2 id="risk-title">Optimal on paper isn't good enough.</h2>
+            <p>Most energy plans are tuned to a single forecast. When reality differs, and it always does, the savings shrink or turn into losses. We plan against the full range of what could happen and protect you against the worst cases.</p>
+          </div>
+          <ul class="split-points reveal" role="list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><p><strong>Robust, not fragile.</strong> We give up a little on the best case to take the nasty surprises off the table.</p></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><p><strong>One method for operations and investments.</strong> Day-ahead schedules and ten-year equipment decisions are judged the same way.</p></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><p><strong>Your risk tolerance, your call.</strong> Decide how conservative the plan should be, and see exactly what that costs or saves.</p></li>
+          </ul>
+        </div>
+
+        <figure class="dist-card reveal" aria-labelledby="dist-title">
+          <header>
+            <h3 id="dist-title">Annual savings across futures</h3>
+            <span class="tag">Illustrative</span>
+          </header>
+          <svg class="dist-chart" viewBox="0 0 640 250" role="img" aria-label="Illustrative distribution of annual savings. The single-forecast plan has a slightly higher peak but a long tail of outcomes that lose money. The risk-aware plan is tightly clustered around solid savings with no losing outcomes.">
+            <rect x="40" y="20" width="232" height="180" style="fill: var(--chart-soft)"/>
+            <text x="156" y="38" text-anchor="middle">LOSING MONEY</text>
+            <line x1="272" y1="20" x2="272" y2="200" stroke-dasharray="3 4" style="stroke: var(--chart-axis)"/>
+            <text x="278" y="38">break-even</text>
+            <path d="M40,200 L40,199 46,199 52,199 57,199 63,198 69,198 75,197 81,196 86,196 92,195 98,193 104,192 110,191 115,189 121,188 127,186 133,184 139,182 144,180 150,178 156,176 162,174 168,172 173,171 179,170 185,168 191,168 197,167 202,167 208,167 214,168 220,168 226,169 231,171 237,172 243,174 249,176 255,177 260,179 266,181 272,182 278,183 284,184 289,185 295,185 301,184 307,183 313,182 318,179 324,176 330,172 336,168 342,162 347,156 353,150 359,142 365,135 371,127 376,119 382,111 388,104 394,97 400,91 405,86 411,83 417,81 423,80 429,81 434,83 440,86 446,91 452,97 458,104 463,111 469,119 475,127 481,135 487,143 492,151 498,158 504,164 510,170 516,175 521,180 527,184 533,187 539,190 545,192 550,194 556,195 562,197 568,197 574,198 579,199 585,199 591,199 597,200 603,200 608,200 614,200 620,200 L620,200 Z" stroke-width="1.5" style="fill: var(--chart-single-fill); stroke: var(--chart-base)"/>
+            <path d="M40,200 L272,199 278,199 284,198 289,197 295,195 301,193 307,191 313,187 318,182 324,176 330,168 336,159 342,149 347,138 353,125 359,112 365,98 371,86 376,74 382,64 388,56 394,52 400,50 405,52 411,56 417,64 423,74 429,86 434,98 440,112 446,125 452,138 458,149 463,159 469,168 475,176 481,182 487,187 492,191 498,193 504,195 510,197 516,198 521,199 527,199 533,200 L620,200 Z" stroke-width="2" style="fill: var(--chart-robust-fill); stroke: var(--chart-accent)"/>
+            <line x1="40" y1="200" x2="620" y2="200" style="stroke: var(--chart-axis)"/>
+            <text x="40" y="220">−20%</text><text x="156" y="220" text-anchor="middle">−10%</text><text x="272" y="220" text-anchor="middle">0%</text><text x="388" y="220" text-anchor="middle">+10%</text><text x="504" y="220" text-anchor="middle">+20%</text><text x="620" y="220" text-anchor="end">+30%</text>
+            <text x="330" y="244" text-anchor="middle">Annual savings on power bill</text>
+            <text x="200" y="158" text-anchor="middle" style="fill: var(--chart-muted)">downside tail</text>
+            <text x="470" y="62" style="fill: var(--chart-accent)">risk-aware</text>
+          </svg>
+          <figcaption class="chart-legend">
+            <span><i class="k-single"></i>Plan tuned to one forecast</span>
+            <span><i class="k-robust"></i>Coherence risk-aware plan</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 02 MILLIONS OF SCENARIOS ============ -->
+    <section class="section" id="scenarios" aria-labelledby="scenarios-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">02 <span>/ Millions of scenarios</span></p>
+          <h2 id="scenarios-title">We test your plant against millions of futures before you commit to one.</h2>
+          <p>Prices, weather, water or product demand, tariff changes, equipment availability. We combine them into millions of scenarios and run each one through a digital twin of your plant, in the time a traditional study would take to set up one spreadsheet.</p>
+        </div>
+        <div class="scale-band reveal">
+          <div><b>Millions</b><span>of scenarios scanned for every decision</span></div>
+          <div><b>1,000s</b><span>of operating and investment configurations compared</span></div>
+          <div><b>10&times;</b><span>faster than a traditional engineering study</span></div>
+        </div>
+        <ol class="flow reveal" role="list">
+          <li><span class="label">01 / Inputs</span><h3>Scenarios</h3><p>Millions of possible futures for prices, weather, demand, tariffs and equipment availability.</p></li>
+          <li><span class="label">02 / Physics</span><h3>Digital twin</h3><p>Your equipment, process physics and operating limits, calibrated to your SCADA or vendor data.</p></li>
+          <li><span class="label">03 / Decision</span><h3>Risk-aware optimizer</h3><p>Finds the plan that performs well across all futures, with extra weight on the bad ones.</p></li>
+          <li><span class="label">04 / Output</span><h3>Robust plan</h3><p>Schedules, setpoints and investments, with a clear range of outcomes you can take to finance.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="security" aria-labelledby="security-title">
+<div class="container">
+<div class="section-head reveal">
+<p class="label">03 <span>/ Security</span></p>
+<h2 id="security-title">Your data stays in your plant. Your people stay in charge.</h2>
+<p>Coherence runs completely offline or entirely on-premises on your IT/business network. Nothing moves to the cloud, and no change happens without a person signing off.</p>
+</div>
+<div class="cards-3">
+<article class="card reveal"><svg viewBox="0 0 24 24" width="26" height="26" style="color: var(--cyan)" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0M12 19h.01M3 3l18 18"></path></svg><h3>Fully offline</h3><p>Run the analysis on a standalone machine from exported data. No internet connection required, ever.</p></article>
+<article class="card reveal"><svg viewBox="0 0 24 24" width="26" height="26" style="color: var(--cyan)" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="1.5"></rect><rect x="3" y="13" width="18" height="7" rx="1.5"></rect><path d="M7 7.5h.01M7 16.5h.01"></path></svg><h3>On-prem, on your network</h3><p>Deploy inside your IT/business network, behind your firewall. Your SCADA and process data stay on your servers.</p></article>
+<article class="card reveal"><svg viewBox="0 0 24 24" width="26" height="26" style="color: var(--cyan)" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c1-3.4 3.4-5.3 6.5-5.3 1.6 0 3 .5 4.1 1.4M15 17l2 2 4-4.5"></path></svg><h3>Human in the loop, always</h3><p>Coherence recommends. Your operators review, approve and act. No change happens without a person signing off.</p></article>
+</div>
+</div>
+</section>
+
+<!-- ============ 03 THREE UNCERTAINTIES ============ -->
+    <section class="section" id="uncertainty" aria-labelledby="uncertainty-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">04 <span>/ Three kinds of uncertainty</span></p>
+          <h2 id="uncertainty-title">What a forecast can't tell you, and how we plan for it anyway.</h2>
+          <p>Plants face three very different kinds of uncertainty. Each one breaks a single-forecast plan in its own way, and each one needs its own answer.</p>
+        </div>
+
+        <div class="example-intro reveal">
+          <p class="label">Worked example</p>
+          <p><strong>A seawater reverse-osmosis desalination plant</strong> with several RO trains, a product-water storage tank, and a time-of-use tariff with demand charges. Power is one of its largest operating costs. <em>(Hypothetical plant, used for illustration.)</em></p>
+        </div>
+
+        <ol class="uncert-list" role="list">
+          <!-- 1. Short-term -->
+          <li class="uncert reveal">
+            <div class="uncert-main">
+              <span class="num">01 / Short-term</span>
+              <h3>Price spikes and disruptions</h3>
+              <p>Some events are hard to forecast, and some are impossible to forecast with the data available.</p>
+              <svg class="mini" viewBox="0 0 400 130" role="img" aria-label="A forecast line stays smooth while the actual price spikes sharply for a few hours in the afternoon.">
+                <line x1="10" y1="110" x2="390" y2="110" style="stroke: var(--chart-axis)"/>
+                <path d="M10,96 L120,92 L220,84 L300,74 L390,90" fill="none" stroke-width="1.5" stroke-dasharray="5 4" style="stroke: var(--chart-strong)"/>
+                <path d="M10,98 L80,94 L150,90 L200,86 L222,84 L234,20 L250,22 L262,82 L300,76 L340,80 L390,92" fill="none" stroke-width="2.2" stroke-linejoin="round" style="stroke: var(--chart-spike)"/>
+                <text x="258" y="18">10&times; spike, 3 hours</text>
+                <text x="10" y="126">forecast (dashed) vs. what happened</text>
+              </svg>
+            </div>
+            <div class="uncert-detail">
+              <div>
+                <p class="label">In the example</p>
+                <p>A heat wave sends real-time power prices to ten times normal for three hours on a weekday afternoon. A week later, a high-pressure pump trips during the evening ramp. Neither shows up in any forecast. A plan tuned to the forecast was filling the product tank that afternoon, so it was caught running every train at the worst possible moment.</p>
+              </div>
+              <div class="is-answer">
+                <p class="label">How Coherence plans for it</p>
+                <ul>
+                  <li>Keep tank level and spare capacity in reserve, sized to how likely and how costly spikes and trips really are across millions of scenarios.</li>
+                  <li>Pre-plan the response: which trains drop first, for how long, and still meet delivery.</li>
+                  <li>Turn spikes into savings instead of bill shocks.</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. Long-term -->
+          <li class="uncert reveal">
+            <div class="uncert-main">
+              <span class="num">02 / Long-term</span>
+              <h3>Market trends and recurring value</h3>
+              <p>Installing a new process line or a battery rests on key assumptions about the market and how much value will recur, year after year.</p>
+              <svg class="mini" viewBox="0 0 400 130" role="img" aria-label="Expected annual savings from a battery investment over ten years, across possible market futures. In some futures savings fall below what is needed to pay back the battery; the robust choice stays above that line in most of them.">
+                <line x1="10" y1="110" x2="390" y2="110" style="stroke: var(--chart-axis)"/><line x1="10" y1="14" x2="10" y2="110" style="stroke: var(--chart-axis)"/><line x1="10" y1="78" x2="390" y2="78" stroke-width="1" stroke-dasharray="4 4" style="stroke: var(--chart-muted)"/><text x="16" y="10">expected annual savings ($/yr)</text><text x="16" y="94" style="fill: var(--chart-muted)">needed to pay back</text>
+                <g fill="none" stroke-width="1" opacity=".55" style="stroke: var(--chart-base)">
+                  <path d="M10,70 L390,14"/><path d="M10,70 L390,30"/><path d="M10,70 L390,46"/><path d="M10,70 L390,58"/><path d="M10,70 L390,70"/><path d="M10,70 L390,84"/><path d="M10,70 L390,98"/><path d="M10,70 L390,112"/>
+                </g>
+                <path d="M10,70 L390,52" fill="none" stroke-width="2.2" style="stroke: var(--chart-accent)"/>
+                <text x="10" y="126">2026</text><text x="390" y="126" text-anchor="end">2036</text><text x="200" y="126" text-anchor="middle">grey lines: possible market futures</text>
+                <text x="300" y="44" style="fill: var(--chart-accent)">robust choice</text>
+              </svg>
+            </div>
+            <div class="uncert-detail">
+              <div>
+                <p class="label">In the example</p>
+                <p>The plant is weighing a battery to cut demand charges. Its value depends on what the next rate case does to demand charges, whether demand-response programs keep paying, how much new solar flattens midday prices, and how fast water demand grows. A battery sized to last year's tariff can look great on paper and be stranded three years later.</p>
+              </div>
+              <div class="is-answer">
+                <p class="label">How Coherence plans for it</p>
+                <ul>
+                  <li>Evaluate every option, from battery sizes to an extra RO train to doing nothing, across thousands of market futures, together with how the plant would operate around it.</li>
+                  <li>Pick the option whose payback holds in most futures, not just the expected one. Often that's a smaller battery paired with operational flexibility.</li>
+                  <li>Show the full range of returns, so your capital request survives finance's toughest questions.</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- 3. Execution -->
+          <li class="uncert reveal">
+            <div class="uncert-main">
+              <span class="num">03 / Execution</span>
+              <h3>Running a plant is an art</h3>
+              <p>Keeping a facility stable with careful chemistry sometimes behaves differently than you expect.</p>
+              <svg class="mini" viewBox="0 0 400 130" role="img" aria-label="When a setpoint changes, the plant's actual response lags and overshoots; Coherence keeps a margin so the response stays inside the quality limit.">
+                <rect x="10" y="22" width="380" height="16" style="fill: var(--chart-margin-fill)"/>
+                <line x1="10" y1="22" x2="390" y2="22" stroke-dasharray="4 4" style="stroke: var(--chart-muted)"/>
+                <text x="390" y="16" text-anchor="end">quality limit</text>
+                <text x="390" y="34" text-anchor="end" style="fill: var(--chart-accent)">margin we keep</text>
+                <path d="M10,92 L130,92 L130,60 L390,60" fill="none" stroke-width="1.5" stroke-dasharray="5 4" style="stroke: var(--chart-strong)"/>
+                <path d="M10,92 L130,92 C150,92 160,44 180,42 C200,40 210,66 230,64 C250,62 260,58 280,60 L390,60" fill="none" stroke-width="2.2" style="stroke: var(--chart-spike)"/>
+                <text x="10" y="126">setpoint (dashed) vs. actual response</text>
+              </svg>
+            </div>
+            <div class="uncert-detail">
+              <div>
+                <p class="label">In the example</p>
+                <p>Dropping from five RO trains to three at 4 pm changes feed pressure, recovery, and how antiscalant and pretreatment chemistry behave. Cycling membranes too often can speed up scaling and fouling, and pretreatment can take hours to settle. A schedule that looks fine in a spreadsheet can push a water-quality parameter toward its limit.</p>
+              </div>
+              <div class="is-answer">
+                <p class="label">How Coherence plans for it</p>
+                <ul>
+                  <li>Model ramp rates, minimum run times and start/stop limits explicitly.</li>
+                  <li>Keep a margin from chemistry and quality limits that reflects how uncertain the plant's response really is.</li>
+                  <li>Learn from your SCADA data how your plant actually responds, and tighten margins only as confidence grows. Your operators stay in the loop.</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 04 RESEARCH ============ -->
+    <section class="section constraints" id="research" aria-labelledby="research-title">
+      <div class="container research">
+        <div>
+          <div class="section-head reveal">
+            <p class="label">05 <span>/ Built on research</span></p>
+            <h2 id="research-title">Developed over decades at Stanford and the U.S. Department of Energy.</h2>
+            <p>The methods behind Coherence come from years of research at Stanford, including the WE3 Lab, and U.S. DOE national laboratories on energy flexibility, water treatment and decision-making under uncertainty. We built a company to put that work on the plant floor.</p>
+          </div>
+          <div class="traction reveal" style="margin-top: 40px; grid-template-columns: repeat(3, minmax(0, 1fr));">
+            <div><b>15+</b><span>Peer-reviewed papers</span></div>
+            <div><b>4</b><span>Successful pilots</span></div>
+            <div><b>4</b><span>Industries demonstrated</span></div>
+          </div>
+          <!-- TODO: link to a publications list, e.g. Google Scholar or a /research page -->
+          <a class="text-link" href="#research">Read the research <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <ol class="timeline reveal" role="list">
+          <li><span class="label">Foundations</span><h3>Optimization under uncertainty</h3><p>Stanford and U.S. DOE research on planning energy systems when prices, demand and operations are uncertain.</p></li>
+          <li><span class="label">Applied</span><h3>Energy and water systems</h3><p>Flexibility models for desalination, water, wastewater and industrial processes, published in peer-reviewed journals.</p></li>
+          <li><span class="label">Proven</span><h3>Pilots with California facilities</h3><p>Four successful pilots, including a co-pilot run on a real-time SCADA data feed.</p></li>
+          <li><span class="label">2026</span><h3>Coherence Power</h3><p>The research, rebuilt as a product for plant managers and their teams.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 05 WHAT YOU GET ============ -->
+    <section class="section" id="deliverables" aria-labelledby="deliver-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">06 <span>/ What you get</span></p>
+          <h2 id="deliver-title">Decisions you can defend, from the control room to the boardroom.</h2>
+        </div>
+        <ul class="deliver-grid" role="list">
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h7"/></svg>
+            <h3>Operating plan</h3>
+            <p>Day-ahead schedules and setpoints your operators can review, with the reasoning behind each move.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            <h3>Investment case</h3>
+            <p>Right-sized storage, equipment and process changes, with payback and IRR across the futures, not one number.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M12 8v5M12 16h.01"/></svg>
+            <h3>Risk profile</h3>
+            <p>How the plan performs in the bad scenarios, and what it would cost to be more or less conservative.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg>
+            <h3>A living model</h3>
+            <p>The model re-optimizes when equipment, production or rates change, so the plan never goes stale.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta-band" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div>
+          <p class="label">Become a pilot site</p>
+          <h2 id="cta-title" style="margin-top: 20px;">See how your plant holds up across a million futures.</h2>
+          <p>Share billing and interval data, and we'll show you where the savings are and how robust they are.</p>
+        </div>
+        <a class="btn btn--primary" href="index.html#contact">Request a site assessment
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <svg viewBox="0 0 34 22" fill="none" aria-hidden="true">
+              <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--chart-accent)"/>
+              <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" opacity=".9" style="stroke: var(--chart-steel)"/>
+            </svg>
+            Coherence Power
+          </a>
+          <p>Energy digital twins that cut industrial power costs without touching output.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="how-it-works.html">How it works</a></li>
+            <li><a href="index.html#industries">Industries</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="index.html#contact">Request a site assessment</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>&copy; <span data-year>2026</span> Coherence Power</span>
+        <span>Palo Alto, CA &middot; 37.4275&deg;N, 122.1697&deg;W</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
