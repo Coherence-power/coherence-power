@@ -1,458 +1,370 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Coherence Power</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --ink:       #061127;
-    --ink-soft:  #35496a;
-    --muted:     #647692;
-    --rule:      #d0dbea;
-    --rule-soft: #e2e9f3;
-    --paper:     #eef2f9;
-    --paper-2:   #e6ecf6;
-    --card:      #ffffff;
-    --accent:    #1655f0;
-    --accent-2:  #062db3;
-    --cyan:      #12c2e9;
-    --grad:      linear-gradient(120deg, #1655f0 0%, #12b6ea 55%, #16d1c9 100%);
-
-    --fs-lg:  clamp(44px, 7vw, 92px);
-    --fs-md:  19px;
-    --fs-sm:  11px;
-  }
-
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; overflow-x: hidden; }
-  body {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
-    color: var(--ink);
-    background: var(--paper);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    line-height: 1.5;
-    /* layered: soft energy glow + fine grid paper texture */
-    background-image:
-      radial-gradient(1100px 620px at 78% -8%, rgba(22,85,240,0.14), transparent 60%),
-      radial-gradient(760px 520px at 8% 4%, rgba(18,194,233,0.10), transparent 55%),
-      linear-gradient(to right, rgba(6,17,39,0.045) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(6,17,39,0.045) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 58px 58px, 58px 58px;
-    background-attachment: fixed, fixed, scroll, scroll;
-  }
-
-  .wrap {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 40px 48px 64px;
-  }
-
-  /* ---------- nav ---------- */
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 96px;
-  }
-  .mark {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: var(--fs-sm);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: var(--ink);
-    display: flex;
-    align-items: center;
-  }
-  .mark .dot {
-    display: inline-block;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--grad);
-    margin-right: 10px;
-    box-shadow: 0 0 0 4px rgba(22,85,240,0.14);
-    animation: pulse 2.6s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 4px rgba(22,85,240,0.14); }
-    50%      { box-shadow: 0 0 0 6px rgba(18,194,233,0.06); }
-  }
-  .meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* ---------- hero ---------- */
-  header.hero {
-    position: relative;
-    padding-bottom: 32px;
-  }
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.24em;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: var(--accent-2);
-    margin-bottom: 34px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .eyebrow::before {
-    content: "";
-    width: 38px;
-    height: 2px;
-    border-radius: 2px;
-    background: var(--grad);
-  }
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: var(--fs-lg);
-    line-height: 1.0;
-    letter-spacing: -0.028em;
-    margin: 0 0 42px;
-    max-width: 940px;
-    color: var(--ink);
-  }
-  h1 em {
-    font-style: italic;
-    font-weight: 400;
-    background: var(--grad);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: var(--accent);
-    display: inline-block;
-    padding-right: 0.12em;
-    margin-right: -0.12em;
-  }
-  .lede {
-    font-family: 'Fraunces', serif;
-    font-size: var(--fs-md);
-    line-height: 1.6;
-    color: var(--ink-soft);
-    max-width: 640px;
-    margin: 0;
-    text-align: left;
-  }
-  .word-flip {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    vertical-align: middle;
-    height: 1.9em;
-    min-width: 2em;
-    background: linear-gradient(180deg, #ffffff, #f2f6ff);
-    border: 1px solid rgba(22,85,240,0.22);
-    border-radius: 6px;
-    padding: 0 10px;
-    box-shadow: 0 2px 10px rgba(22,85,240,0.12), inset 0 0 0 1px rgba(255,255,255,0.6);
-  }
-  .word-flip-inner {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.45s cubic-bezier(.4,0,.2,1);
-  }
-  .word-flip-inner span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1.9em;
-    color: var(--accent);
-    font-style: italic;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  /* decorative floating spec block, upper right */
-  .spec {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    text-align: right;
-    line-height: 2.0;
-    border-right: 2px solid transparent;
-    border-image: var(--grad) 1;
-    padding-right: 16px;
-  }
-  .spec b { color: var(--ink); font-weight: 500; }
-
-  /* ---------- section headers ---------- */
-  .section-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    border-top: 1px solid var(--rule);
-    padding-top: 20px;
-    margin-bottom: 56px;
-  }
-  .section-head .label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .section-head .title {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 20px;
-    color: var(--ink);
-  }
-
-  /* ---------- audience card ---------- */
-  .audience-btns {
-    position: relative;
-    margin: 20px auto 0;
-    max-width: 680px;
-    padding: 48px 44px 40px;
-    background: var(--card);
-    border: 1px solid var(--rule-soft);
-    border-radius: 18px;
-    box-shadow:
-      0 1px 0 rgba(255,255,255,0.9) inset,
-      0 24px 60px -28px rgba(6,17,39,0.28),
-      0 8px 24px -16px rgba(22,85,240,0.18);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    overflow: hidden;
-  }
-  /* gradient hairline along the top of the card */
-  .audience-btns::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--grad);
-  }
-  .audience-btns a.segment {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    width: 100%;
-    background: var(--grad);
-    color: #fff;
-    border: 0;
-    border-radius: 10px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 20px 26px;
-    text-align: left;
-    text-decoration: none;
-    cursor: pointer;
-    line-height: 1.4;
-    box-shadow: 0 10px 26px -12px rgba(22,85,240,0.6);
-    transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
-  }
-  .audience-btns a.segment .arw {
-    transition: transform 0.22s ease;
-    font-size: 16px;
-    flex: 0 0 auto;
-  }
-  .audience-btns a.segment:hover {
-    transform: translateY(-2px);
-    filter: saturate(1.12);
-    box-shadow: 0 18px 36px -14px rgba(22,85,240,0.7);
-  }
-  .audience-btns a.segment:hover .arw { transform: translateX(5px); }
-  .audience-sub {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    line-height: 1.7;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-align: center;
-    margin: 10px 0 20px;
-    width: 100%;
-  }
-  .audience-sub + .audience-sub {
-    margin-top: -18px;
-  }
-  .audience-prompt {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 22px;
-    color: var(--ink);
-    margin: 0 0 20px;
-  }
-  .audience-btns > div { width: 100%; }
-  .audience-btns a.stay {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 3px;
-    margin-top: 6px;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .audience-btns a.stay:hover { color: var(--accent); border-color: var(--accent); }
-
-  /* ---------- footer ---------- */
-  footer {
-    margin-top: 64px;
-    padding-top: 28px;
-    border-top: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
-  footer a:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* ---------- responsive ---------- */
-  @media (max-width: 860px) {
-    .wrap { padding: 28px 22px 40px; }
-    nav { padding-bottom: 64px; flex-wrap: wrap; gap: 8px; }
-    .meta { font-size: 10px; letter-spacing: 0.1em; }
-    h1 { margin-bottom: 34px; }
-    header.hero { padding-bottom: 72px; }
-    .spec { display: none; }
-    .audience-btns { padding: 36px 22px 32px; border-radius: 14px; }
-    .audience-btns a.segment { font-size: 12px; padding: 18px 20px; letter-spacing: 0.06em; }
-    footer { flex-direction: column; gap: 12px; align-items: flex-start; }
-  }
-
-  /* entrance animation */
-  .reveal { opacity: 0; transform: translateY(12px); animation: rise 0.9s cubic-bezier(.2,.7,.2,1) forwards; }
-  .reveal.d1 { animation-delay: 0.05s; }
-  .reveal.d2 { animation-delay: 0.18s; }
-  .reveal.d3 { animation-delay: 0.32s; }
-  .reveal.d4 { animation-delay: 0.46s; }
-  @keyframes rise {
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coherence Power: lower your plant's power bill without touching output</title>
+  <meta name="description" content="Coherence Power builds an energy digital twin of your plant. It finds the schedules, setpoints and storage moves that cut your power bill. No new hardware.">
+  <meta name="theme-color" content="#1b1c1d">
+  <meta property="og:title" content="Coherence Power: cut your plant's power bill, not its output">
+  <meta property="og:description" content="Energy digital twins for industrial plants. Study-grade answers in weeks. No new hardware.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.coherencepower.com/">
+  <meta property="og:image" content="https://www.coherencepower.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>(function(){var d=document.documentElement,t=null;d.classList.add('js');try{t=localStorage.getItem('cp-theme');}catch(e){}if(t==='light'){d.setAttribute('data-theme','light');var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content','#f6f7f7');}})();</script>
 </head>
 <body>
-<div class="wrap">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav>
-    <div class="mark reveal d1"><span class="dot"></span>Coherence Power</div>
-    <div class="meta reveal d1">Palo Alto, CA · Est. 2026</div>
-  </nav>
-
-  <header class="hero">
-    <div class="spec reveal d1">
-      <div>v. <b>0.1</b></div>
-      <div>lat. <b>37.4275°N</b></div>
-      <div>lon. <b>122.1697°W</b></div>
-    </div>
-    <div class="eyebrow reveal d1">Find coherence between the grid and the industrial base.</div>
-    <h1 class="reveal d2">
-      Energy intelligence<br>
-      <em>behind-the-meter</em>.
-    </h1>
-    <p class="lede reveal d3">
-      <span class="word-flip" id="flip1"><span class="word-flip-inner"></span></span>
-      your
-      <span class="word-flip" id="flip2"><span class="word-flip-inner"></span></span>
-      facility to unlock flexibility without disrupting product delivery or quality.
-    </p>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <nav class="container nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Coherence Power home">
+        <svg viewBox="0 0 34 22" fill="none" aria-hidden="true">
+          <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--chart-accent)"/>
+          <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" opacity=".9" style="stroke: var(--chart-steel)"/>
+        </svg>
+        Coherence Power
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#industries">Industries</a></li>
+      </ul>
+      <div class="nav-cta">
+<button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg></button>
+        <a class="btn btn--primary" href="#contact">Request a site assessment</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+        </button>
+      </div>
+    </nav>
   </header>
 
-  <section class="audience-btns reveal d4">
-    <div>
-      <a class="segment" href="suppliers.html"><span>Are you a power supplier, trader, or developer?</span><span class="arw">→</span></a>
-      <p class="audience-sub">Energy Utilities · Demand Aggregators · On-site Power Developers</p>
-    </div>
-    <div>
-      <a class="segment" href="industrial.html"><span>Do you own or operate an industrial site?</span><span class="arw">→</span></a>
-      <p class="audience-sub">Plant Owner/Operators · Equipment Manufacturers · Engineering Consultants</p>
-    </div>
-    <a class="stay" href="interested.html">Just keep me in the loop →</a>
-  </section>
+  <main id="main">
 
-  <footer>
-    <div>© Coherence Power · 2026</div>
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="label">Energy digital twin for your plant</p>
+          <h1 id="hero-title">Cut your plant's power bill. <span class="accent">Not its output.</span></h1>
+          <p class="lead">Pay less for power. Hit every production target, quality spec and delivery date. Coherence tells your team when to run each machine and which upgrades pay back. No new sensors. No new hardware.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#contact">Request a site assessment
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="how-it-works.html">See how it works</a>
+          </div>
+          <p class="hero-meta"><span>Built on Stanford and U.S. DOE research</span><span>Pilots with California facilities</span></p>
+        </div>
+
+        <figure class="chart-card" aria-labelledby="chart-title">
+          <header>
+            <h2 id="chart-title">Plant load, one day</h2>
+            <span class="tag">Illustrative</span>
+          </header>
+          <svg class="load-chart" viewBox="0 0 640 250" role="img" aria-label="Illustrative chart. The baseline plant load peaks in the late afternoon during the highest-priced hours. The Coherence schedule moves that load to overnight and midday hours and drops it during the 4 to 9 pm peak window.">
+            <!-- peak price window 16:00–21:00 -->
+            <rect x="426.7" y="14" width="120.8" height="206" style="fill: var(--chart-peak)"/>
+            <text x="487" y="30" text-anchor="middle" style="fill: var(--chart-peak-label)">PEAK $$$</text>
+            <!-- grid -->
+            <g stroke-width="1" style="stroke: var(--chart-grid)">
+              <line x1="40" y1="162.9" x2="620" y2="162.9"/>
+              <line x1="40" y1="105.7" x2="620" y2="105.7"/>
+              <line x1="40" y1="48.6" x2="620" y2="48.6"/>
+            </g>
+            <line x1="40" y1="220" x2="620" y2="220" style="stroke: var(--chart-axis)"/>
+            <text x="32" y="224" text-anchor="end">0</text>
+            <text x="32" y="167" text-anchor="end">2</text>
+            <text x="32" y="110" text-anchor="end">4</text>
+            <text x="32" y="53" text-anchor="end">6</text>
+            <text x="40" y="242">00:00</text>
+            <text x="185" y="242" text-anchor="middle">06:00</text>
+            <text x="330" y="242" text-anchor="middle">12:00</text>
+            <text x="475" y="242" text-anchor="middle">18:00</text>
+            <text x="620" y="242" text-anchor="end">24:00</text>
+            <text x="44" y="14">MW</text>
+            <!-- baseline -->
+            <path d="M40.0,117.1 L64.2,120.0 L88.3,120.0 L112.5,122.9 L136.7,120.0 L160.8,114.3 L185.0,105.7 L209.2,97.1 L233.3,91.4 L257.5,88.6 L281.7,88.6 L305.8,85.7 L330.0,85.7 L354.2,82.9 L378.3,82.9 L402.5,80.0 L426.7,77.1 L450.8,74.3 L475.0,77.1 L499.2,82.9 L523.3,91.4 L547.5,100.0 L571.7,108.6 L595.8,114.3 L620.0,117.1" fill="none" stroke-width="2" stroke-dasharray="5 5" style="stroke: var(--chart-base)"/>
+            <!-- optimized schedule -->
+            <path class="opt-line" d="M40.0,71.4 L160.8,71.4 L160.8,77.1 L185.0,77.1 L185.0,88.6 L209.2,88.6 L209.2,94.3 L233.3,94.3 L233.3,88.6 L257.5,88.6 L257.5,65.7 L281.7,65.7 L281.7,60.0 L378.3,60.0 L378.3,65.7 L402.5,65.7 L402.5,88.6 L426.7,88.6 L426.7,145.7 L450.8,145.7 L450.8,151.4 L499.2,151.4 L499.2,148.6 L523.3,148.6 L523.3,145.7 L547.5,145.7 L547.5,117.1 L571.7,117.1 L571.7,88.6 L595.8,88.6 L595.8,77.1 L620.0,77.1" fill="none" stroke-width="2.5" stroke-linejoin="round" style="stroke: var(--chart-accent)"/>
+          </svg>
+          <figcaption class="chart-legend">
+            <span><i class="k-base"></i>Today's schedule</span>
+            <span><i class="k-opt"></i>Coherence schedule</span>
+            <span><i class="k-peak"></i>Peak-price hours</span>
+          </figcaption>
+          <div class="chart-readout">
+            <div><b>Same</b><span>Daily output</span></div>
+            <div><b>Same</b><span>Product quality</span></div>
+            <div><b>&minus;10%</b><span>Power cost</span></div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS STRIP ============ -->
+    <section class="results" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="results-top">
+          <h2 class="label" id="results-title">Results from academic pilots with California facilities</h2>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>10%</b><span>Reduction in annual power costs</span></div>
+          <div class="stat"><b>50%</b><span>CapEx savings on energy storage investment</span></div>
+          <div class="stat"><b>18%</b><span>IRR on committed CapEx investments</span></div>
+          <div class="stat"><b>23%</b><span>Bill savings over one month of co-pilot simulation<sup>1</sup></span></div>
+        </div>
+        <p class="footnote">1. Virtual pilot used, with a real-time data feed from the facility's SCADA system.</p>
+      </div>
+    </section>
+
+    <!-- ============ 01 PROBLEM ============ -->
+    <section class="section" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">01 <span>/ The problem</span></p>
+          <h2 id="problem-title">Your plant already has savings in it. They are hard to find.</h2>
+          <p>Your pumps, compressors, tanks and batch steps can run at different times. The hard part is knowing which changes are safe.</p>
+        </div>
+        <div class="cards-3">
+          <article class="card reveal">
+            <span class="num">A</span>
+            <h3>Rates are complex</h3>
+            <p>Time-of-use prices and demand charges make each hour cost a different amount. The rules also change often.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">B</span>
+            <h3>Studies take too long</h3>
+            <p>A full energy study takes many months and costs hundreds of thousands of dollars. It is out of date when your equipment or rates change.</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">C</span>
+            <h3>Generic programs ignore your process</h3>
+            <p>A battery that doesn't understand how your facility operates increases energy bills. Blunt load cuts from demand response aggregators can hurt quality and throughput.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 HOW IT WORKS ============ -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">02 <span>/ How it works</span></p>
+          <h2 id="how-title">A digital twin of your plant. You focus on production, not energy costs.</h2>
+          <p>We model how your plant runs: equipment, process limits and tariff. Then we find the cheapest way to make the same product.</p>
+        </div>
+        <ol class="steps" role="list">
+          <li class="step reveal">
+            <span class="label">Step 01</span>
+            <h3>Connect</h3>
+            <p>We use data you already have: utility bills, interval meter data and SCADA or historian data. No new sensors. No new hardware.</p>
+          </li>
+          <li class="step reveal">
+            <span class="label">Step 02</span>
+            <h3>Model</h3>
+            <p>We build an energy digital twin. It holds your equipment, process limits, production targets and rate structure.</p>
+          </li>
+          <li class="step reveal">
+            <span class="label">Step 03</span>
+            <h3>Optimize</h3>
+            <p>We test thousands of operating options. These include schedules, setpoints and storage size. We rank them by savings and payback.</p>
+          </li>
+          <li class="step reveal">
+            <span class="label">Step 04</span>
+            <h3>Operate</h3>
+            <p>A co-pilot recommends the next day's schedule. When equipment, production or rates change, the model updates the plan.</p>
+          </li>
+        </ol>
+
+        <div class="diff">
+          <h3 class="reveal">The rigor of an engineering study. <span class="accent">The speed and cost of software.</span></h3>
+          <ul class="diff-list">
+            <li class="reveal"><b>10&times;</b><p><strong>Faster than a traditional study.</strong> Software does the analyst work. You get answers in weeks.</p></li>
+            <li class="reveal"><b>Millions</b><p><strong>Of scenarios scanned.</strong> Your plan still works when prices spike or markets shift.</p></li>
+            <li class="reveal"><b>Always</b><p><strong>Up to date.</strong> The model re-optimizes when you add equipment, change production or get new rates.</p></li>
+            <li class="reveal"><b>Zero</b><p><strong>New hardware.</strong> We use the data you already collect. Nothing to install on your plant floor.</p></li>
+          </ul>
+        </div>
+        <a class="text-link reveal" href="how-it-works.html">How risk-aware optimization works <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <!-- ============ 03 PROCESS FIRST ============ -->
+    <section class="section constraints" id="constraints" aria-labelledby="constraints-title">
+      <div class="container constraints-grid">
+        <div class="section-head reveal">
+          <p class="label">03 <span>/ Your process comes first</span></p>
+          <h2 id="constraints-title">Savings that never cost you a spec.</h2>
+          <p>Every recommendation stays inside the limits your plant already runs on. Quality and delivery are fixed. We never trade them for savings.</p>
+        </div>
+        <ul class="guard-list" role="list">
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+            <h3>Product quality</h3>
+            <p>Spec limits and quality targets are hard limits in the model.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg>
+            <h3>Production targets</h3>
+            <p>Daily volumes and delivery dates stay fixed. We only shift load that does not affect them.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+            <h3>Equipment health</h3>
+            <p>The model includes start/stop limits, ramp rates, pressures and tank levels.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.6 3.8-5.5 7-5.5s5.8 1.9 7 5.5"/></svg>
+            <h3>Your operators decide</h3>
+            <p>Your team reviews every recommendation. Coherence never takes over the controls.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 04 INDUSTRIES ============ -->
+    <section class="section" id="industries" aria-labelledby="industries-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">04 <span>/ Industries</span></p>
+          <h2 id="industries-title">Our technology has been demonstrated in water. Built for process industry.</h2>
+          <p>Does your plant move water, gas, heat or product with pumps, compressors and tanks? Then it can shift load. Our technology has been demonstrated in the four water and irrigation sectors below. We started there because power is a top cost.</p>
+        </div>
+        <ul class="industry-grid" role="list">
+          <li class="industry is-proven reveal"><h3>Desalination</h3><span class="status">Demonstrated</span></li>
+          <li class="industry is-proven reveal"><h3>Municipal water</h3><span class="status">Demonstrated</span></li>
+          <li class="industry is-proven reveal"><h3>Wastewater</h3><span class="status">Demonstrated</span></li>
+          <li class="industry is-proven reveal"><h3>Agricultural irrigation</h3><span class="status">Demonstrated</span></li>
+          <li class="industry reveal"><h3>Food &amp; beverage</h3><span class="status">Now partnering</span></li>
+          <li class="industry reveal"><h3>Pulp &amp; paper</h3><span class="status">Now partnering</span></li>
+          <li class="industry reveal"><h3>Chlor-alkali</h3><span class="status">Now partnering</span></li>
+          <li class="industry reveal"><h3>Air separation</h3><span class="status">Now partnering</span></li>
+          <li class="industry reveal"><h3>Gas processing</h3><span class="status">Now partnering</span></li>
+          <li class="industry reveal"><h3>Dairy</h3><span class="status">Now partnering</span></li>
+          <li class="industry reveal"><h3>Textiles</h3><span class="status">Now partnering</span></li>
+          <li class="industry reveal"><h3>Don't see yours?</h3><a class="status" href="#contact" style="color: var(--cyan); text-decoration: none;">Talk to us &rarr;</a></li>
+        </ul>
+      </div>
+    </section>
+
+<!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="label">Join the wait list</p>
+          <h2 id="contact-title">Find the flexibility in your plant.</h2>
+          <p>We are opening our wait list to a small number of facilities. We will show you what an energy digital twin can do. Tell us about your site. We will show you where the savings are. If we find none, you pay nothing.</p>
+          <ol class="contact-steps" role="list">
+            <li><span>01</span>A 30-minute call about your process and your power bill.</li>
+            <li><span>02</span>You send 2 months of bills and interval data. No hardware needed.</li>
+            <li><span>03</span>We send you a first estimate of your savings.</li>
+          </ol>
+          <p class="contact-direct">Prefer email? <a href="mailto:info@coherencepower.com">info@coherencepower.com</a></p>
+        </div>
+
+        <!-- action placeholder is replaced with the FORMSPREE_FORM_ID secret at deploy (.github/workflows/pages.yml) -->
+        <form class="form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-contact-form>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Work email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-company">Company / facility</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-role">Your role</label>
+            <input id="f-role" name="role" type="text" placeholder="e.g. Plant manager">
+          </div>
+          <div class="field">
+            <label for="f-type">Facility type</label>
+            <select id="f-type" name="facility_type">
+              <option value="">Select one</option>
+              <option>Desalination</option>
+              <option>Municipal water</option>
+              <option>Wastewater</option>
+              <option>Agricultural irrigation</option>
+              <option>Food &amp; beverage</option>
+              <option>Pulp &amp; paper</option>
+              <option>Chemicals / chlor-alkali</option>
+              <option>Air separation / industrial gas</option>
+              <option>Gas processing</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-spend">Annual electricity spend</label>
+            <select id="f-spend" name="annual_spend">
+              <option value="">Select a range</option>
+              <option>Under $500k</option>
+              <option>$500k to $2M</option>
+              <option>$2M to $10M</option>
+              <option>Over $10M</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="f-msg">What would you like to solve?</label>
+            <textarea id="f-msg" name="message" placeholder="e.g. Our demand charges jumped after the new tariff..."></textarea>
+          </div>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
+          <button class="btn btn--primary" type="submit">Request a site assessment
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#top">
+            <svg viewBox="0 0 34 22" fill="none" aria-hidden="true">
+              <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--chart-accent)"/>
+              <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" opacity=".9" style="stroke: var(--chart-steel)"/>
+            </svg>
+            Coherence Power
+          </a>
+          <p>Energy digital twins that cut plant power costs. Output stays the same.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="how-it-works.html">How it works</a></li>
+            <li><a href="#industries">Industries</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#contact">Request a site assessment</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>&copy; <span data-year>2026</span> Coherence Power</span>
+        <span>Palo Alto, CA &middot; 37.4275&deg;N, 122.1697&deg;W</span>
+      </div>
+    </div>
   </footer>
 
-</div>
-
-<script type="module">
-  import { words1, words2 } from './words.js';
-
-  function buildFlip(el, words) {
-      var inner = el.querySelector('.word-flip-inner');
-      // s0 = visible slot, s1 = staging slot below
-      var s0 = document.createElement('span');
-      var s1 = document.createElement('span');
-      s0.textContent = words[0];
-      s1.textContent = '';
-      inner.appendChild(s0);
-      inner.appendChild(s1);
-      // measure max width across every word
-      var maxW = 0;
-      words.forEach(function(word) {
-        s0.textContent = word;
-        if (s0.offsetWidth > maxW) maxW = s0.offsetWidth;
-      });
-      s0.textContent = words[0];
-      el.style.width = (maxW + 16) + 'px'; // 16 = 8px padding each side
-      return { inner: inner, words: words, current: 0, s0: s0, s1: s1 };
-    }
-
-    function pickNext(words, current) {
-      var next;
-      do { next = Math.floor(Math.random() * words.length); } while (next === current);
-      return next;
-    }
-
-    function advance(state) {
-      var nextIdx = pickNext(state.words, state.current);
-      // stage next word in s1 (off-screen below)
-      state.s1.textContent = state.words[nextIdx];
-      // slide up to reveal s1
-      state.inner.style.transition = 'transform 0.45s cubic-bezier(.4,0,.2,1)';
-      state.inner.style.transform = 'translateY(-1.9em)';
-      setTimeout(function() {
-        // snap: promote new word to s0, clear s1, reset position
-        state.s0.textContent = state.words[nextIdx];
-        state.s1.textContent = '';
-        state.inner.style.transition = 'none';
-        state.inner.style.transform = 'translateY(0)';
-        state.current = nextIdx;
-      }, 460);
-    }
-
-    window.addEventListener('load', function() {
-      var s1 = buildFlip(document.getElementById('flip1'), words1);
-      var s2 = buildFlip(document.getElementById('flip2'), words2);
-
-      setInterval(function() { advance(s1); }, 3200);
-      setInterval(function() { advance(s2); }, 3200);
-  });
-</script>
+  <script src="main.js" defer></script>
 </body>
 </html>
