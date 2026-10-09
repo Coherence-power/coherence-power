@@ -23,7 +23,7 @@ The audience is **plant managers, operators and plant engineers** at industrial 
 | 02 Step 01 data inputs | bills, interval data, SCADA/historian, "no new hardware to start" | **Assumption.** SCADA is from deck slide 10, but confirm what you actually ask for and whether hardware is ever needed |
 | 03 Process first | quality and delivery are fixed | Current site; deck slide 5 ("deep understanding of operating constraints") |
 | 03 "Your operators decide" | recommendations, not autonomous control | **Assumption.** Confirm this matches your product |
-| 04 Industries | 11 verticals, demonstrated vs next | Deck slide 13 (TRL 6–7 = Demonstrated; TRL 4–5 = Now partnering) |
+| 04 Industries | 11 verticals, demonstrated vs next. Wording: "our technology has been demonstrated in..." (the technology was demonstrated, not necessarily by the company itself) | Deck slide 13 (TRL 6–7 = Demonstrated; TRL 4–5 = Now partnering) |
 | 04 Evidence chart | **Removed** at your request until there is more supporting data. The CSS (`.evidence`, `.ev-*`) is still in styles.css for later | Deck slide 12 |
 | Team section | **Removed** at your request (bios, traction stats, affiliations) | |
 | Contact | "small number of facilities", pilot framing | Deck slide 15, current industrial.html |
