@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Coherence Power: lower your plant's power bill without touching output</title>
-  <meta name="description" content="Coherence Power builds an energy digital twin of your plant. It finds the schedules, setpoints and storage moves that cut your power bill. No new hardware.">
-  <meta name="theme-color" content="#1b1c1d">
-  <meta property="og:title" content="Coherence Power: cut your plant's power bill, not its output">
-  <meta property="og:description" content="Energy digital twins for industrial plants. Study-grade answers in weeks. No new hardware.">
+  <title>Coherence Power: what every machine in your plant costs to run</title>
+  <meta name="description" content="Coherence Power builds a physics-based model of your plant from your drawings and a walkthrough. You get the running cost of every major machine and a ranked list of fixes, without installing power meters.">
+  <meta name="theme-color" content="#f2f4f1">
+  <meta property="og:title" content="See what every machine in your plant costs to run, without installing a single meter">
+  <meta property="og:description" content="A physics-based model of your plant, built from your drawings and a walkthrough. Cost per machine, and a ranked list of fixes.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.coherencepower.com/">
   <meta property="og:image" content="https://www.coherencepower.com/assets/og-image.png">
@@ -15,31 +15,29 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500&family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>(function(){var d=document.documentElement,t=null;d.classList.add('js');try{t=localStorage.getItem('cp-theme');}catch(e){}if(t==='light'){d.setAttribute('data-theme','light');var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content','#f6f7f7');}})();</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============ HEADER ============ -->
   <header class="site-header" id="top">
     <nav class="container nav" aria-label="Primary">
       <a class="brand" href="#top" aria-label="Coherence Power home">
         <svg viewBox="0 0 34 22" fill="none" aria-hidden="true">
-          <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--chart-accent)"/>
-          <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" opacity=".9" style="stroke: var(--chart-steel)"/>
+          <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--blue)"/>
+          <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--ink)"/>
         </svg>
         Coherence Power
       </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="how-it-works.html">How it works</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#industries">Industries</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#deliverables">What you get</a></li>
+        <li><a href="#proof">Track record</a></li>
+        <li><a href="how-it-works.html">The planning method</a></li>
       </ul>
       <div class="nav-cta">
-<button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg></button>
-        <a class="btn btn--primary" href="#contact">Request a site assessment</a>
+        <a class="btn btn--primary" href="#contact">Request a cost map</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
         </button>
@@ -49,230 +47,329 @@
 
   <main id="main">
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="label">Energy digital twin for your plant</p>
-          <h1 id="hero-title">Cut your plant's power bill. <span class="accent">Not its output.</span></h1>
-          <p class="lead">Pay less for power. Hit every production target, quality spec and delivery date. Coherence tells your team when to run each machine and which upgrades pay back. No new sensors. No new hardware.</p>
-          <div class="hero-actions">
-            <a class="btn btn--primary" href="#contact">Request a site assessment
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-            <a class="btn btn--ghost" href="how-it-works.html">See how it works</a>
+    <!-- Hero -->
+    <section class="intro" aria-labelledby="hero-title">
+      <div class="container">
+        <h1 id="hero-title">See what every machine in your plant costs to run, without installing a single meter.</h1>
+        <div class="intro-body">
+          <p>You know what the plant pays for power each month. Splitting that bill by pump, blower or line usually means a sub-metering project. We get there from the physics instead: we scan your process, build a working model of the plant, and hand you a running cost for every major machine, plus a ranked list of what to fix.</p>
+          <div class="intro-actions">
+            <a class="btn btn--primary" href="#contact">Request a cost map</a>
+            <a class="btn btn--ghost" href="#how">How it works</a>
           </div>
-          <p class="hero-meta"><span>Built on Stanford and U.S. DOE research</span><span>Pilots with California facilities</span></p>
         </div>
+      </div>
+    </section>
 
-        <figure class="chart-card" aria-labelledby="chart-title">
-          <header>
-            <h2 id="chart-title">Plant load, one day</h2>
-            <span class="tag">Illustrative</span>
-          </header>
-          <svg class="load-chart" viewBox="0 0 640 250" role="img" aria-label="Illustrative chart. The baseline plant load peaks in the late afternoon during the highest-priced hours. The Coherence schedule moves that load to overnight and midday hours and drops it during the 4 to 9 pm peak window.">
-            <!-- peak price window 16:00–21:00 -->
-            <rect x="426.7" y="14" width="120.8" height="206" style="fill: var(--chart-peak)"/>
-            <text x="487" y="30" text-anchor="middle" style="fill: var(--chart-peak-label)">PEAK $$$</text>
-            <!-- grid -->
-            <g stroke-width="1" style="stroke: var(--chart-grid)">
-              <line x1="40" y1="162.9" x2="620" y2="162.9"/>
-              <line x1="40" y1="105.7" x2="620" y2="105.7"/>
-              <line x1="40" y1="48.6" x2="620" y2="48.6"/>
-            </g>
-            <line x1="40" y1="220" x2="620" y2="220" style="stroke: var(--chart-axis)"/>
-            <text x="32" y="224" text-anchor="end">0</text>
-            <text x="32" y="167" text-anchor="end">2</text>
-            <text x="32" y="110" text-anchor="end">4</text>
-            <text x="32" y="53" text-anchor="end">6</text>
-            <text x="40" y="242">00:00</text>
-            <text x="185" y="242" text-anchor="middle">06:00</text>
-            <text x="330" y="242" text-anchor="middle">12:00</text>
-            <text x="475" y="242" text-anchor="middle">18:00</text>
-            <text x="620" y="242" text-anchor="end">24:00</text>
-            <text x="44" y="14">MW</text>
-            <!-- baseline -->
-            <path d="M40.0,117.1 L64.2,120.0 L88.3,120.0 L112.5,122.9 L136.7,120.0 L160.8,114.3 L185.0,105.7 L209.2,97.1 L233.3,91.4 L257.5,88.6 L281.7,88.6 L305.8,85.7 L330.0,85.7 L354.2,82.9 L378.3,82.9 L402.5,80.0 L426.7,77.1 L450.8,74.3 L475.0,77.1 L499.2,82.9 L523.3,91.4 L547.5,100.0 L571.7,108.6 L595.8,114.3 L620.0,117.1" fill="none" stroke-width="2" stroke-dasharray="5 5" style="stroke: var(--chart-base)"/>
-            <!-- optimized schedule -->
-            <path class="opt-line" d="M40.0,71.4 L160.8,71.4 L160.8,77.1 L185.0,77.1 L185.0,88.6 L209.2,88.6 L209.2,94.3 L233.3,94.3 L233.3,88.6 L257.5,88.6 L257.5,65.7 L281.7,65.7 L281.7,60.0 L378.3,60.0 L378.3,65.7 L402.5,65.7 L402.5,88.6 L426.7,88.6 L426.7,145.7 L450.8,145.7 L450.8,151.4 L499.2,151.4 L499.2,148.6 L523.3,148.6 L523.3,145.7 L547.5,145.7 L547.5,117.1 L571.7,117.1 L571.7,88.6 L595.8,88.6 L595.8,77.1 L620.0,77.1" fill="none" stroke-width="2.5" stroke-linejoin="round" style="stroke: var(--chart-accent)"/>
-          </svg>
-          <figcaption class="chart-legend">
-            <span><i class="k-base"></i>Today's schedule</span>
-            <span><i class="k-opt"></i>Coherence schedule</span>
-            <span><i class="k-peak"></i>Peak-price hours</span>
-          </figcaption>
-          <div class="chart-readout">
-            <div><b>Same</b><span>Daily output</span></div>
-            <div><b>Same</b><span>Product quality</span></div>
-            <div><b>&minus;10%</b><span>Power cost</span></div>
+    <!-- The cost map: an illustrative plant, drawn like a marked-up process drawing -->
+    <div class="sheet-wrap">
+      <div class="container">
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+          <defs>
+            <symbol id="sym-pump" viewBox="0 0 56 56"><circle cx="28" cy="28" r="17"/><path d="M19 15.5 43.5 28 19 40.5z"/></symbol>
+            <symbol id="sym-filter" viewBox="0 0 56 56"><rect x="13" y="8" width="30" height="40" rx="9"/><path d="M13 36 43 20" stroke-dasharray="4 3"/></symbol>
+            <symbol id="sym-comp" viewBox="0 0 56 56"><circle cx="28" cy="28" r="17"/><path d="M14 19.5 42 24.5M14 36.5 42 31.5"/></symbol>
+            <symbol id="sym-panel" viewBox="0 0 56 56"><rect x="11" y="11" width="34" height="34"/><path d="M11 11 45 45M45 11 11 45"/></symbol>
+          </defs>
+        </svg>
+
+        <figure class="sheet" aria-labelledby="sheet-title">
+          <div class="sheet-body">
+            <ol class="pid">
+              <li class="unit unit--line">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-pump"/></svg></span>
+                <span class="unit-tag">P-101 A/B</span>
+                <span class="unit-name">Intake pumps</span>
+                <span class="unit-spec">2 &times; 110 kW</span>
+                <span class="unit-cost"><mark>$176k</mark></span>
+                <span class="unit-share">a year, 10% of the bill</span>
+              </li>
+              <li class="unit unit--line">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-filter"/></svg></span>
+                <span class="unit-tag">F-201</span>
+                <span class="unit-name">Pretreatment and backwash</span>
+                <span class="unit-spec">120 kW</span>
+                <span class="unit-cost"><mark>$92k</mark></span>
+                <span class="unit-share">a year, 5%</span>
+              </li>
+              <li class="unit unit--line">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-pump"/></svg></span>
+                <span class="unit-tag">P-301 A/B</span>
+                <span class="unit-name">High-pressure pumps</span>
+                <span class="unit-spec">2 &times; 700 kW</span>
+                <span class="unit-cost"><mark>$1,086k</mark></span>
+                <span class="unit-share">a year, 59%</span>
+                <span class="unit-note">Pump B runs well off its best efficiency point. That costs $58k a year.</span>
+              </li>
+              <li class="unit unit--line is-last">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-pump"/></svg></span>
+                <span class="unit-tag">P-401 A/B</span>
+                <span class="unit-name">Product transfer pumps</span>
+                <span class="unit-spec">2 &times; 150 kW</span>
+                <span class="unit-cost"><mark>$221k</mark></span>
+                <span class="unit-share">a year, 12%</span>
+                <span class="unit-note">The tank is filled during the 4 to 9 pm peak most days. Moving it saves $74k a year.</span>
+              </li>
+              <li class="unit unit--aux">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-comp"/></svg></span>
+                <span class="unit-tag">C-501</span>
+                <span class="unit-name">Compressed air</span>
+                <span class="unit-spec">90 kW</span>
+                <span class="unit-cost"><mark>$74k</mark></span>
+                <span class="unit-share">a year, 4%</span>
+              </li>
+              <li class="unit unit--aux">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-panel"/></svg></span>
+                <span class="unit-tag">MCC-6</span>
+                <span class="unit-name">Buildings and everything else</span>
+                <span class="unit-spec">Lighting, HVAC, dosing</span>
+                <span class="unit-cost"><mark>$191k</mark></span>
+                <span class="unit-share">a year, 10%</span>
+              </li>
+            </ol>
           </div>
+          <dl class="titleblock">
+            <div><dt>Drawing</dt><dd id="sheet-title">Plant energy cost map</dd></div>
+            <div><dt>Plant</dt><dd>Seawater RO, illustrative example</dd></div>
+            <div><dt>Electricity</dt><dd>$1.84M a year</dd></div>
+            <div><dt>Built from</dt><dd>Drawings, nameplates, bills and one walkthrough</dd></div>
+            <div><dt>Meters installed</dt><dd>None</dd></div>
+          </dl>
         </figure>
       </div>
-    </section>
+    </div>
 
-    <!-- ============ RESULTS STRIP ============ -->
-    <section class="results" id="results" aria-labelledby="results-title">
+    <!-- Why -->
+    <section class="block" id="why" aria-labelledby="why-title">
       <div class="container">
-        <div class="results-top">
-          <h2 class="label" id="results-title">Results from academic pilots with California facilities</h2>
+        <h2 id="why-title">The utility bill gives you one number for the whole plant. The decisions you have to make are about individual machines.</h2>
+        <p class="block-intro">Which pump is worth replacing? Is the compressed-air system as bad as everyone suspects? Would a variable-speed drive on the blowers pay back? You can't answer those from a monthly total, and metering every load to find out is a capital project in its own right.</p>
+        <div class="block-body">
+          <table class="table table--compare">
+            <thead>
+              <tr><th scope="col"><span class="visually-hidden">Question</span></th><th scope="col">Sub-metering every load</th><th scope="col">A Coherence cost map</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">What it takes</th>
+                <td data-label="Sub-metering">Meters, current transformers, electricians, panel access and often a shutdown window.</td>
+                <td class="is-ours" data-label="Cost map">Your drawings, equipment list and utility bills, plus one walk of the plant with your team.</td>
+              </tr>
+              <tr>
+                <th scope="row">Money up front</th>
+                <td data-label="Sub-metering">A capital request before you have learned anything.</td>
+                <td class="is-ours" data-label="Cost map">No hardware to buy. If we find no savings, you pay nothing.</td>
+              </tr>
+              <tr>
+                <th scope="row">First answers</th>
+                <td data-label="Sub-metering">After installation, once enough data has built up.</td>
+                <td class="is-ours" data-label="Cost map">In weeks.</td>
+              </tr>
+              <tr>
+                <th scope="row">What it tells you</th>
+                <td data-label="Sub-metering">How much power each load drew.</td>
+                <td class="is-ours" data-label="Cost map">How much each load drew, why, and what it would draw if you changed a setpoint, a schedule or the equipment.</td>
+              </tr>
+              <tr>
+                <th scope="row">Where it is stronger</th>
+                <td data-label="Sub-metering">Live measured readings, minute by minute.</td>
+                <td class="is-ours" data-label="Cost map">Questions about a change you haven't made yet.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="fineprint">Already have sub-meters or a historian? Good. We use that data to tighten the model.</p>
         </div>
-        <div class="stats">
-          <div class="stat"><b>10%</b><span>Reduction in annual power costs</span></div>
-          <div class="stat"><b>50%</b><span>CapEx savings on energy storage investment</span></div>
-          <div class="stat"><b>18%</b><span>IRR on committed CapEx investments</span></div>
-          <div class="stat"><b>23%</b><span>Bill savings over one month of co-pilot simulation<sup>1</sup></span></div>
-        </div>
-        <p class="footnote">1. Virtual pilot used, with a real-time data feed from the facility's SCADA system.</p>
       </div>
     </section>
 
-    <!-- ============ 01 PROBLEM ============ -->
-    <section class="section" id="problem" aria-labelledby="problem-title">
+    <!-- How it works -->
+    <section class="block" id="how" aria-labelledby="how-title">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="label">01 <span>/ The problem</span></p>
-          <h2 id="problem-title">Your plant already has savings in it. They are hard to find.</h2>
-          <p>Your pumps, compressors, tanks and batch steps can run at different times. The hard part is knowing which changes are safe.</p>
-        </div>
-        <div class="cards-3">
-          <article class="card reveal">
-            <span class="num">A</span>
-            <h3>Rates are complex</h3>
-            <p>Time-of-use prices and demand charges make each hour cost a different amount. The rules also change often.</p>
-          </article>
-          <article class="card reveal">
-            <span class="num">B</span>
-            <h3>Studies take too long</h3>
-            <p>A full energy study takes many months and costs hundreds of thousands of dollars. It is out of date when your equipment or rates change.</p>
-          </article>
-          <article class="card reveal">
-            <span class="num">C</span>
-            <h3>Generic programs ignore your process</h3>
-            <p>A battery that doesn't understand how your facility operates increases energy bills. Blunt load cuts from demand response aggregators can hurt quality and throughput.</p>
-          </article>
+        <h2 id="how-title">How we get from your drawings to a cost for every machine</h2>
+        <div class="block-body">
+          <ol class="steps">
+            <li>
+              <h3>Scan the process</h3>
+              <p>You send P&amp;IDs, an equipment list and two months of bills and interval data. Then we walk the floor with your team, read nameplates, and ask operators how each unit is really run.</p>
+            </li>
+            <li>
+              <h3>Build the plant in software</h3>
+              <p>We model the process from the physics up: pump curves, motors, pressure drops, tank volumes. We then tune it until its total tracks your utility meter, so the breakdown inside it can be trusted.</p>
+            </li>
+            <li>
+              <h3>Find where the money goes</h3>
+              <p>The model shows what each machine costs to run and what it would cost if it ran well. The gap between the two is your list: pumps off their curve, equipment left idling, loads running in the most expensive hours.</p>
+            </li>
+            <li>
+              <h3>Fix what's worth fixing</h3>
+              <p>We rank every fix by savings and payback and help you carry it out. Some are a setpoint or schedule change your operators can make this week. Others are capital projects, and the model gives you the numbers to take to finance.</p>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <!-- ============ 02 HOW IT WORKS ============ -->
-    <section class="section" id="how" aria-labelledby="how-title">
+    <!-- What you get -->
+    <section class="block" id="deliverables" aria-labelledby="deliver-title">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="label">02 <span>/ How it works</span></p>
-          <h2 id="how-title">A digital twin of your plant. You focus on production, not energy costs.</h2>
-          <p>We model how your plant runs: equipment, process limits and tariff. Then we find the cheapest way to make the same product.</p>
+        <h2 id="deliver-title">What you get is a list you can act on, sorted by payback</h2>
+        <p class="block-intro">Here is the fix list for the example plant above. The cheapest items come first because most plants have savings that need no capital at all.</p>
+        <div class="block-body">
+          <div class="fix-wrap">
+            <table class="table">
+              <caption>Illustrative example for the seawater RO plant shown above, not a customer result.</caption>
+              <thead>
+                <tr><th scope="col">Fix</th><th scope="col" class="num">Saves each year</th><th scope="col" class="num">Costs</th><th scope="col" class="num">Payback</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fix">Fill the product tank outside the 4 to 9 pm peak<small>Schedule change</small></td>
+                  <td class="num" data-label="Saves each year">$74k</td>
+                  <td class="num" data-label="Costs">Nothing</td>
+                  <td class="num" data-label="Payback">Immediate</td>
+                </tr>
+                <tr>
+                  <td class="fix">Trim the impeller on high-pressure pump B<small>Maintenance</small></td>
+                  <td class="num" data-label="Saves each year">$58k</td>
+                  <td class="num" data-label="Costs">$40k</td>
+                  <td class="num" data-label="Payback">8 months</td>
+                </tr>
+                <tr>
+                  <td class="fix">Repair air leaks and lower header pressure<small>Maintenance</small></td>
+                  <td class="num" data-label="Saves each year">$19k</td>
+                  <td class="num" data-label="Costs">$6k</td>
+                  <td class="num" data-label="Payback">4 months</td>
+                </tr>
+                <tr>
+                  <td class="fix">Variable-speed drive on intake pump B<small>Capital project</small></td>
+                  <td class="num" data-label="Saves each year">$31k</td>
+                  <td class="num" data-label="Costs">$55k</td>
+                  <td class="num" data-label="Payback">1.8 years</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td class="fix">All four</td>
+                  <td class="num" data-label="Saves each year"><mark>$182k</mark></td>
+                  <td class="num" data-label="Costs">$101k</td>
+                  <td class="num" data-label="Share of bill">10% of the bill</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="cols">
+            <div>
+              <h3>The cost map</h3>
+              <p>Annual running cost for every major machine and system, tied back to your actual bill, including demand charges and time-of-use rates.</p>
+            </div>
+            <div>
+              <h3>The fix list</h3>
+              <p>Each inefficiency with its cause, what it costs you, what the fix costs, and how long it takes to pay back. We help you scope and carry out the ones you choose.</p>
+            </div>
+            <div>
+              <h3>A model you can ask again</h3>
+              <p>When you add equipment, change production or get a new tariff, we rerun the model. You can also test a change in it before you spend money on the real thing.</p>
+            </div>
+          </div>
         </div>
-        <ol class="steps" role="list">
-          <li class="step reveal">
-            <span class="label">Step 01</span>
-            <h3>Connect</h3>
-            <p>We use data you already have: utility bills, interval meter data and SCADA or historian data. No new sensors. No new hardware.</p>
-          </li>
-          <li class="step reveal">
-            <span class="label">Step 02</span>
-            <h3>Model</h3>
-            <p>We build an energy digital twin. It holds your equipment, process limits, production targets and rate structure.</p>
-          </li>
-          <li class="step reveal">
-            <span class="label">Step 03</span>
-            <h3>Optimize</h3>
-            <p>We test thousands of operating options. These include schedules, setpoints and storage size. We rank them by savings and payback.</p>
-          </li>
-          <li class="step reveal">
-            <span class="label">Step 04</span>
-            <h3>Operate</h3>
-            <p>A co-pilot recommends the next day's schedule. When equipment, production or rates change, the model updates the plan.</p>
-          </li>
-        </ol>
+      </div>
+    </section>
 
-        <div class="diff">
-          <h3 class="reveal">The rigor of an engineering study. <span class="accent">The speed and cost of software.</span></h3>
-          <ul class="diff-list">
-            <li class="reveal"><b>10&times;</b><p><strong>Faster than a traditional study.</strong> Software does the analyst work. You get answers in weeks.</p></li>
-            <li class="reveal"><b>Millions</b><p><strong>Of scenarios scanned.</strong> Your plan still works when prices spike or markets shift.</p></li>
-            <li class="reveal"><b>Always</b><p><strong>Up to date.</strong> The model re-optimizes when you add equipment, change production or get new rates.</p></li>
-            <li class="reveal"><b>Zero</b><p><strong>New hardware.</strong> We use the data you already collect. Nothing to install on your plant floor.</p></li>
+    <!-- Track record -->
+    <section class="block block--band" id="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <h2 id="proof-title">The modeling comes out of Stanford and U.S. Department of Energy research, and has been tested on working facilities</h2>
+        <p class="block-intro">The scheduling and storage-sizing side of the model has been through academic pilots with California facilities. These are the results.</p>
+        <div class="block-body">
+          <dl class="results">
+            <div><dt>10–15%</dt><dd>reduction in annual power costs</dd></div>
+            <div><dt>38%</dt><dd>CapEx savings on energy storage investment</dd></div>
+            <div><dt>18%</dt><dd>IRR on committed CapEx investments</dd></div>
+            <div><dt>23%</dt><dd>bill savings over one month of co-pilot simulation<sup>1</sup></dd></div>
+          </dl>
+          <p class="fineprint">1. Virtual pilot used, with a real-time data feed from the facility's SCADA system.</p>
+
+          <div class="papers-head">
+            <h3>Read the research and the code</h3>
+            <p>Our models are based on U.S. Department of Energy process modeling projects and are fully open source for transparency. Check the code yourself: <a href="https://github.com/flex-pse/flex-pse" target="_blank" rel="noopener">flex-pse on GitHub</a>.</p>
+          </div>
+          <ul class="papers">
+            <li>
+              <a href="https://doi.org/10.1038/s44221-024-00316-4" target="_blank" rel="noopener">
+                <span class="paper-venue">Nature Water, 2024</span>
+                <span class="paper-title">Valuing energy flexibility from water systems</span>
+                <span class="paper-by">Rao, Bolorinos, Musabandesu, Chapin and Mauter</span>
+                <span class="paper-go">Read the paper</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://doi.org/10.1021/acssuschemeng.4c06353" target="_blank" rel="noopener">
+                <span class="paper-venue">ACS Sustainable Chemistry &amp; Engineering, 2024</span>
+                <span class="paper-title">Optimizing desalination operations for energy flexibility</span>
+                <span class="paper-by">Rao, Atia, Knueven and Mauter</span>
+                <span class="paper-go">Read the paper</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://doi.org/10.1021/acs.est.4c09773" target="_blank" rel="noopener">
+                <span class="paper-venue">Environmental Science &amp; Technology, 2025</span>
+                <span class="paper-title">Load-shifting strategies for cost-effective emission reductions at wastewater facilities</span>
+                <span class="paper-by">Chapin, Wettermark, Bolorinos and Mauter</span>
+                <span class="paper-go">Read the paper</span>
+              </a>
+            </li>
           </ul>
+          <p class="fineprint">The cost map is a newer service built on the same models, and we are taking on a small number of plants for it. <a href="how-it-works.html">Read how we plan schedules and investments when prices are uncertain.</a></p>
         </div>
-        <a class="text-link reveal" href="how-it-works.html">How risk-aware optimization works <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
-    <!-- ============ 03 PROCESS FIRST ============ -->
-    <section class="section constraints" id="constraints" aria-labelledby="constraints-title">
-      <div class="container constraints-grid">
-        <div class="section-head reveal">
-          <p class="label">03 <span>/ Your process comes first</span></p>
-          <h2 id="constraints-title">Savings that never cost you a spec.</h2>
-          <p>Every recommendation stays inside the limits your plant already runs on. Quality and delivery are fixed. We never trade them for savings.</p>
+    <!-- Limits -->
+    <section class="block" id="limits" aria-labelledby="limits-title">
+      <div class="container split">
+        <div>
+          <h2 id="limits-title">Every recommendation keeps your product in spec and your orders on time</h2>
+          <p class="block-intro">Every recommendation stays inside the limits your plant already runs on. Quality and delivery are fixed in the model, and we don't trade them for a lower bill.</p>
+          <p class="block-intro">The analysis can run fully offline or on your own network. <a href="how-it-works.html#security">How we handle your data</a></p>
         </div>
-        <ul class="guard-list" role="list">
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-            <h3>Product quality</h3>
-            <p>Spec limits and quality targets are hard limits in the model.</p>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg>
-            <h3>Production targets</h3>
-            <p>Daily volumes and delivery dates stay fixed. We only shift load that does not affect them.</p>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
-            <h3>Equipment health</h3>
-            <p>The model includes start/stop limits, ramp rates, pressures and tank levels.</p>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.6 3.8-5.5 7-5.5s5.8 1.9 7 5.5"/></svg>
-            <h3>Your operators decide</h3>
-            <p>Your team reviews every recommendation. Coherence never takes over the controls.</p>
-          </li>
-        </ul>
+        <dl class="limits">
+          <div><dt>Product quality</dt><dd>Spec limits and quality targets are hard limits in the model.</dd></div>
+          <div><dt>Production targets</dt><dd>Daily volumes and delivery dates stay fixed. We only move load that does not affect them.</dd></div>
+          <div><dt>Equipment health</dt><dd>The model includes start and stop limits, ramp rates, pressures and tank levels.</dd></div>
+          <div><dt>Your operators</dt><dd>Your team reviews every recommendation. Coherence never takes over the controls.</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ============ 04 INDUSTRIES ============ -->
-    <section class="section" id="industries" aria-labelledby="industries-title">
+    <!-- Industries -->
+    <section class="block" id="industries" aria-labelledby="industries-title">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="label">04 <span>/ Industries</span></p>
-          <h2 id="industries-title">Our technology has been demonstrated in water. Built for process industry.</h2>
-          <p>Does your plant move water, gas, heat or product with pumps, compressors and tanks? Then it can shift load. Our technology has been demonstrated in the four water and irrigation sectors below. We started there because power is a top cost.</p>
+        <h2 id="industries-title">We started in water, where power is one of the biggest costs</h2>
+        <p class="block-intro">Our technology works for a wide range of sensing needs, security requirements, and processing steps.</p>
+        <div class="sectors">
+          <p><strong>Our technology has been demonstrated in</strong> desalination, municipal water, wastewater and agricultural irrigation.</p>
+          <p><strong>We are now partnering with plants in</strong> food and beverage, dairy, pulp and paper, chlor-alkali, air separation, gas processing and textiles.</p>
+          <p>If your plant moves water, gas, heat or product with pumps, compressors and tanks, the same approach applies. <a href="#contact">Tell us about your process.</a></p>
         </div>
-        <ul class="industry-grid" role="list">
-          <li class="industry is-proven reveal"><h3>Desalination</h3><span class="status">Demonstrated</span></li>
-          <li class="industry is-proven reveal"><h3>Municipal water</h3><span class="status">Demonstrated</span></li>
-          <li class="industry is-proven reveal"><h3>Wastewater</h3><span class="status">Demonstrated</span></li>
-          <li class="industry is-proven reveal"><h3>Agricultural irrigation</h3><span class="status">Demonstrated</span></li>
-          <li class="industry reveal"><h3>Food &amp; beverage</h3><span class="status">Now partnering</span></li>
-          <li class="industry reveal"><h3>Pulp &amp; paper</h3><span class="status">Now partnering</span></li>
-          <li class="industry reveal"><h3>Chlor-alkali</h3><span class="status">Now partnering</span></li>
-          <li class="industry reveal"><h3>Air separation</h3><span class="status">Now partnering</span></li>
-          <li class="industry reveal"><h3>Gas processing</h3><span class="status">Now partnering</span></li>
-          <li class="industry reveal"><h3>Dairy</h3><span class="status">Now partnering</span></li>
-          <li class="industry reveal"><h3>Textiles</h3><span class="status">Now partnering</span></li>
-          <li class="industry reveal"><h3>Don't see yours?</h3><a class="status" href="#contact" style="color: var(--cyan); text-decoration: none;">Talk to us &rarr;</a></li>
-        </ul>
       </div>
     </section>
 
-<!-- ============ CONTACT ============ -->
-    <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <!-- Contact -->
+    <section class="block block--band" id="contact" aria-labelledby="contact-title">
       <div class="container contact-grid">
-        <div class="contact-copy reveal">
-          <p class="label">Join the wait list</p>
-          <h2 id="contact-title">Find the flexibility in your plant.</h2>
-          <p>We are opening our wait list to a small number of facilities. We will show you what an energy digital twin can do. Tell us about your site. We will show you where the savings are. If we find none, you pay nothing.</p>
-          <ol class="contact-steps" role="list">
-            <li><span>01</span>A 30-minute call about your process and your power bill.</li>
-            <li><span>02</span>You send 2 months of bills and interval data. No hardware needed.</li>
-            <li><span>03</span>We send you a first estimate of your savings.</li>
+        <div>
+          <h2 id="contact-title">Ask for a cost map of your plant</h2>
+          <p class="block-intro">We are working with a small number of facilities. Tell us about your site and we will show you where the money goes. If we find no savings, you pay nothing.</p>
+          <ol class="contact-steps">
+            <li>A 30-minute call about your process and your power bill.</li>
+            <li>You send drawings, an equipment list, and 2 months of bills and interval data. No hardware needed.</li>
+            <li>We send you a first estimate of your savings.</li>
           </ol>
           <p class="contact-direct">Prefer email? <a href="mailto:info@coherencepower.com">info@coherencepower.com</a></p>
         </div>
 
         <!-- action placeholder is replaced with the FORMSPREE_FORM_ID secret at deploy (.github/workflows/pages.yml) -->
-        <form class="form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-contact-form>
+        <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-contact-form>
           <div class="field">
             <label for="f-name">Name</label>
             <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -282,12 +379,12 @@
             <input id="f-email" name="email" type="email" autocomplete="email" required>
           </div>
           <div class="field">
-            <label for="f-company">Company / facility</label>
+            <label for="f-company">Company or facility</label>
             <input id="f-company" name="company" type="text" autocomplete="organization">
           </div>
           <div class="field">
             <label for="f-role">Your role</label>
-            <input id="f-role" name="role" type="text" placeholder="e.g. Plant manager">
+            <input id="f-role" name="role" type="text" placeholder="Plant manager">
           </div>
           <div class="field">
             <label for="f-type">Facility type</label>
@@ -317,51 +414,35 @@
             </select>
           </div>
           <div class="field field--full">
-            <label for="f-msg">What would you like to solve?</label>
-            <textarea id="f-msg" name="message" placeholder="e.g. Our demand charges jumped after the new tariff..."></textarea>
+            <label for="f-msg">What would you most like to know about your plant?</label>
+            <textarea id="f-msg" name="message" placeholder="We suspect the blowers, but nobody can prove it."></textarea>
           </div>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
-          <button class="btn btn--primary" type="submit">Request a site assessment
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </button>
+          <button class="btn btn--primary" type="submit">Request a cost map</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a class="brand" href="#top">
-            <svg viewBox="0 0 34 22" fill="none" aria-hidden="true">
-              <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--chart-accent)"/>
-              <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" opacity=".9" style="stroke: var(--chart-steel)"/>
-            </svg>
-            Coherence Power
-          </a>
-          <p>Energy digital twins that cut plant power costs. Output stays the same.</p>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="how-it-works.html">How it works</a></li>
-            <li><a href="#industries">Industries</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="#contact">Request a site assessment</a></li>
-          </ul>
-        </div>
+      <div class="footer-row">
+        <a class="brand" href="#top">
+          <svg viewBox="0 0 34 22" fill="none" aria-hidden="true">
+            <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--blue)"/>
+            <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--ink)"/>
+          </svg>
+          Coherence Power
+        </a>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="how-it-works.html">The planning method</a></li>
+          <li><a href="#contact">Request a cost map</a></li>
+          <li><a href="mailto:info@coherencepower.com">info@coherencepower.com</a></li>
+        </ul>
       </div>
-      <div class="footer-base">
-        <span>&copy; <span data-year>2026</span> Coherence Power</span>
-        <span>Palo Alto, CA &middot; 37.4275&deg;N, 122.1697&deg;W</span>
-      </div>
+      <p class="footer-base">&copy; <span data-year>2026</span> Coherence Power, Palo Alto, California</p>
     </div>
   </footer>
 
