@@ -1,25 +1,5 @@
 /* Coherence Power — small progressive enhancements. Site works without JS. */
 (function () {
-  // Theme toggle (dark is the default; choice is remembered per visitor)
-  var root = document.documentElement;
-  var meta = document.querySelector('meta[name="theme-color"]');
-  var syncThemeUI = function () {
-    var light = root.getAttribute('data-theme') === 'light';
-    document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
-      b.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
-    });
-    if (meta) meta.setAttribute('content', light ? '#f6f7f7' : '#1b1c1d');
-  };
-  document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('cp-theme', next); } catch (e) {}
-      syncThemeUI();
-    });
-  });
-  syncThemeUI();
-
   // Sticky header border once scrolled
   var header = document.querySelector('.site-header');
   var onScroll = function () { header && header.classList.toggle('is-scrolled', window.scrollY > 8); };
@@ -42,19 +22,6 @@
         toggle.setAttribute('aria-label', 'Open menu');
       }
     });
-  }
-
-  // Reveal on scroll
-  var items = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    items.forEach(function (el) { io.observe(el); });
-  } else {
-    items.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
   // Footer year
