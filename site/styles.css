@@ -91,7 +91,7 @@ p { margin: 0; }
 /* ---------- Hero ---------- */
 .hero { padding-block: clamp(40px, 7vw, 96px) var(--section); }
 .hero-for { font-family: var(--font-tag); font-weight: 500; font-size: 1.0625rem; color: var(--blue); }
-.hero h1 { margin-top: 12px; font-size: var(--fs-display); line-height: 0.98; letter-spacing: -0.012em; max-width: 16em; text-wrap: balance; }
+.hero h1 { margin-top: 12px; font-size: var(--fs-display); line-height: 0.98; letter-spacing: -0.012em; max-width: 14em; text-wrap: balance; }
 .hero-lead { margin-top: clamp(20px, 2.5vw, 32px); max-width: 60ch; font-size: var(--fs-lead); color: var(--ink-soft); }
 
 /* Two buying situations: a real pair, so ruled rows, not cards */
@@ -105,14 +105,22 @@ p { margin: 0; }
 .cta .btn { min-height: 56px; padding-inline: 32px; font-size: 1.25rem; }
 .cta p { color: var(--ink-faint); font-size: var(--fs-small); max-width: 34ch; }
 
-/* Research links sit under the button: quiet, secondary */
-.research { margin-top: clamp(40px, 5vw, 64px); padding-top: 20px; border-top: 1px solid var(--rule-strong); max-width: 1040px; }
-.research h2 { font-size: 1.125rem; }
-.research-figures { margin-top: 8px; color: var(--ink-soft); font-size: var(--fs-small); }
-.research-figures strong { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
-.research ul { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
-.research li { font-size: var(--fs-small); color: var(--ink-faint); }
-.research li a { font-weight: 500; }
+/* Industry cards: link to a paper or case study; "coming soon" cards are muted and not links */
+.verticals { margin-top: clamp(48px, 6vw, 80px); }
+.verticals h2 { font-size: var(--fs-h3); }
+.vcards { margin: 20px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.vcard > a, .vcard > div { display: flex; flex-direction: column; gap: 8px; height: 100%; padding: 20px; background: var(--sheet); border: 1.5px solid var(--ink); border-radius: var(--radius); color: var(--ink); text-decoration: none; }
+.vcard > a:hover { border-color: var(--blue); }
+.vcard > a:hover .vcard-title { color: var(--blue-deep); }
+.vcard > a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.vcard-name { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; line-height: 1.2; }
+.vcard-title { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.vcard-meta { margin-top: auto; font-size: var(--fs-small); color: var(--ink-faint); }
+.vcard--soon > div { background: transparent; border: 1.5px dashed var(--rule-strong); }
+.vcard--soon .vcard-name { color: var(--ink-soft); }
+.vcard--soon .vcard-meta { margin-top: 0; }
+@media (max-width: 900px) { .vcards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .vcards { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1.5px solid var(--ink); padding-block: 28px; }
