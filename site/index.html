@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coherence Power: master planning for plant expansions and power bills</title>
+  <meta name="description" content="Master planning software that helps energy-intensive plants prioritize a build-out and cut more than 10% off future power bills.">
+  <meta name="theme-color" content="#f2f4f1">
+  <meta property="og:title" content="Power bills going up and thinking about a facility expansion?">
+  <meta property="og:description" content="Master planning software that helps you prioritize the build-out and cut more than 10% off future power bills.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.coherencepower.com/">
+  <meta property="og:image" content="https://www.coherencepower.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.coherencepower.com/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500&family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <span class="brand">
+        <svg viewBox="0 0 34 22" fill="none" aria-hidden="true">
+          <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--blue)"/>
+          <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--ink)"/>
+        </svg>
+        Coherence Power
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <h1 id="hero-title">Power bills going up and thinking about a facility expansion?</h1>
+        <p class="hero-lead">Our master planning software helps you prioritize the build-out and cut more than 10% off future power bills (see the <a href="#case-studies">case studies</a> for details). We model your plant from its drawings, two months of bills and one walk through the floor, often without any new metering involved.</p>
+
+        <div class="cta">
+          <a class="btn btn--primary" href="mailto:info@coherencepower.com?subject=Demo%20request" data-demo>Book a demo</a>
+          <p>30 minutes with one of our engineers about your plant and your power bill.</p>
+        </div>
+
+        <section class="verticals" id="case-studies" aria-labelledby="verticals-title">
+          <h2 id="verticals-title">Research and case studies by industry</h2>
+          <ul class="vcards">
+            <li class="vcard">
+              <a href="https://doi.org/10.1021/acssuschemeng.4c06353" target="_blank" rel="noopener" aria-label="Advanced filtration case study: ACS Sustainable Chemistry &amp; Engineering, 2024 (opens in a new tab)">
+                <span class="vcard-name">Advanced filtration</span>
+                <svg class="vcard-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg>
+              </a>
+            </li>
+            <li class="vcard">
+              <a href="https://doi.org/10.1021/acs.est.4c09773" target="_blank" rel="noopener" aria-label="Wastewater treatment case study: Environmental Science &amp; Technology, 2025 (opens in a new tab)">
+                <span class="vcard-name">Wastewater treatment</span>
+                <svg class="vcard-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg>
+              </a>
+            </li>
+            <li class="vcard">
+              <a href="https://doi.org/10.1038/s44221-024-00316-4" target="_blank" rel="noopener" aria-label="Water distribution case study: Nature Water, 2024 (opens in a new tab)">
+                <span class="vcard-name">Water distribution</span>
+                <svg class="vcard-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg>
+              </a>
+            </li>
+            <li class="vcard vcard--soon"><div><span class="vcard-name">Chemical processing</span><span class="vcard-meta">(Coming soon)</span></div></li>
+            <li class="vcard vcard--soon"><div><span class="vcard-name">Food and beverage</span><span class="vcard-meta">(Coming soon)</span></div></li>
+            <li class="vcard vcard--soon"><div><span class="vcard-name">Cold storage</span><span class="vcard-meta">(Coming soon)</span></div></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>Our models come out of Stanford and U.S. Department of Energy research.</p>
+      <p>&copy; <span data-year>2026</span> Coherence Power, Palo Alto, California &middot; <a href="mailto:info@coherencepower.com">info@coherencepower.com</a></p>
+    </div>
+  </footer>
+
+  <!-- Demo request. Without JS (or before the form ID is injected) the buttons fall back to email. -->
+  <dialog class="demo" id="demo" aria-labelledby="demo-title">
+    <!-- action placeholder is replaced with the FORMSPREE_FORM_ID secret at deploy (.github/workflows/pages.yml) -->
+    <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-demo-form>
+      <div class="demo-head">
+        <h2 id="demo-title">Book a demo</h2>
+        <button class="demo-close" type="button" aria-label="Close" data-demo-close>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15"/></svg>
+        </button>
+      </div>
+      <p class="demo-intro">We'll email you within two business days to find a time.</p>
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-email">Work email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="f-company">Company or facility</label>
+        <input id="f-company" name="company" type="text" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="f-goal">What are you working on?</label>
+        <select id="f-goal" name="goal">
+          <option value="">Select one</option>
+          <option>Cutting energy costs</option>
+          <option>Planning an expansion</option>
+          <option>Both</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <input type="hidden" name="_subject" value="Demo request: coherencepower.com">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
+      <button class="btn btn--primary" type="submit">Request a demo</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

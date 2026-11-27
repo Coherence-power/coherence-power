@@ -56,5 +56,5 @@ No stock photography. When photos are added, use real plant and team photos, unc
 
 ## Files
 
-- `styles.css`: tokens, base, header, footer, buttons, homepage.
-- `how-it-works.css`: components used only by `how-it-works.html`.
+- `site/styles.css`: tokens, base, header, footer, buttons, cost map, demo dialog.
+- `archive/`: the previous multi-page site and its styles (not deployed).

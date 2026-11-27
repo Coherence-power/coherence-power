@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Coherence Power: landing page
+   Light, engineering-drawing look. Tokens are documented in docs/DESIGN_SYSTEM.md.
+   ========================================================================== */
+
+:root {
+  /* Paper and ink */
+  --paper: #f2f4f1;          /* drafting vellum, slightly green-grey */
+  --paper-deep: #e6eae6;     /* alternate bands, footer */
+  --sheet: #ffffff;          /* drawing sheets, tables, form */
+  --ink: #14232d;            /* blue-black drawing ink */
+  --ink-soft: #43525b;       /* body copy */
+  --ink-faint: #66747c;      /* captions, table labels (4.6:1 on paper) */
+  --rule: #c8d0d1;           /* light rules */
+  --rule-strong: #8e9a9f;    /* inputs, table heads */
+  --blue: #1d5c8c;           /* process lines, links */
+  --blue-deep: #14456b;
+  --marker: #ffd84a;         /* highlighter. Only ever sits behind a cost figure */
+
+  /* Type */
+  --font-display: "Barlow Semi Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --font-tag: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+
+  --fs-display: clamp(2.5rem, 1.35rem + 4.6vw, 5rem);
+  --fs-h2: clamp(1.9rem, 1.35rem + 2vw, 3rem);
+  --fs-h3: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --fs-lead: clamp(1.15rem, 1.08rem + 0.3vw, 1.3rem);
+  --fs-body: 1.125rem;
+  --fs-small: 1rem;
+  --fs-label: 0.9375rem;
+
+  /* Layout */
+  --max: 1200px;
+  --gutter: clamp(18px, 4vw, 48px);
+  --section: clamp(64px, 9vw, 128px);
+  --radius: 3px;
+  --radius-lg: 3px;
+
+  color-scheme: light;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--blue-deep); }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.08; margin: 0; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.skip-link { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: #fff; padding: 10px 16px; z-index: 100; }
+.skip-link:focus { left: 16px; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 50px; padding: 12px 24px;
+  border: 1.5px solid var(--ink); border-radius: var(--radius);
+  font-family: var(--font-display); font-size: 1.125rem; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+}
+.btn svg { display: none; }
+.btn--primary { background: var(--ink); color: #fff; }
+.btn--primary:hover { background: var(--blue-deep); border-color: var(--blue-deep); color: #fff; }
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--sheet); color: var(--ink); }
+
+/* ---------- Header ---------- */
+.site-header { background: var(--paper); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; color: var(--ink); font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; }
+.brand svg { width: 34px; height: 22px; }
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(40px, 7vw, 96px) var(--section); }
+.hero h1 { font-size: var(--fs-display); line-height: 0.98; letter-spacing: -0.012em; max-width: 14em; text-wrap: balance; }
+.hero-lead { margin-top: clamp(20px, 2.5vw, 32px); max-width: 60ch; font-size: var(--fs-lead); color: var(--ink-soft); }
+
+.cta { margin-top: clamp(36px, 5vw, 56px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.cta .btn { min-height: 56px; padding-inline: 32px; font-size: 1.25rem; }
+.cta p { color: var(--ink-faint); font-size: var(--fs-small); max-width: 34ch; }
+
+/* Industry cards: link to a paper or case study; "coming soon" cards are muted and not links */
+.verticals { margin-top: clamp(48px, 6vw, 80px); scroll-margin-top: 24px; }
+.verticals h2 { font-size: var(--fs-h3); }
+.vcards { margin: 20px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 16px; }
+.vcard > a, .vcard > div { position: relative; display: flex; flex-direction: column; justify-content: center; gap: 6px; height: 100%; min-height: 112px; box-sizing: border-box; padding: 20px 52px 20px 20px; background: var(--sheet); border: 1.5px solid var(--ink); border-radius: var(--radius); color: var(--ink); text-decoration: none; }
+.vcard > a:hover { border-color: var(--blue); color: var(--blue-deep); }
+.vcard > a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.vcard-name { font-family: var(--font-display); font-weight: 600; font-size: 1.375rem; line-height: 1.2; }
+.vcard-arrow { position: absolute; top: 18px; right: 18px; width: 20px; height: 20px; color: var(--blue); }
+.vcard-meta { font-size: var(--fs-small); color: var(--ink-faint); }
+.vcard--soon > div { background: transparent; border: 1.5px dashed var(--rule-strong); }
+.vcard--soon .vcard-name { color: var(--ink-soft); }
+@media (max-width: 900px) { .vcards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .vcards { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1.5px solid var(--ink); padding-block: 28px; }
+.footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 40px; font-size: 0.9375rem; color: var(--ink-faint); }
+.footer-row a { color: var(--ink-soft); }
+
+/* ---------- Demo dialog ---------- */
+.demo { width: min(520px, calc(100vw - 32px)); padding: 0; border: 0; background: transparent; color: var(--ink); }
+.demo::backdrop { background: rgba(20, 35, 45, 0.45); }
+.form { background: var(--sheet); border: 1.5px solid var(--ink); padding: clamp(20px, 4vw, 36px); display: grid; gap: 18px; }
+.demo-head { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.demo-head h2 { font-size: var(--fs-h2); }
+.demo-close { background: none; border: 1.5px solid var(--ink); color: var(--ink); width: 40px; height: 40px; border-radius: var(--radius); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.demo-close svg { width: 18px; height: 18px; }
+.demo-intro { color: var(--ink-soft); margin-top: -6px; }
+.field { display: grid; gap: 6px; }
+.field label { font-size: 1rem; font-weight: 500; }
+.field input, .field select {
+  width: 100%; min-height: 48px; padding: 10px 12px;
+  background: var(--sheet); color: var(--ink);
+  border: 1px solid var(--rule-strong); border-radius: var(--radius);
+  font-family: var(--font-body); font-size: 1.0625rem;
+}
+.field input:focus, .field select:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
+.field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2314232d' stroke-width='1.5'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; padding-right: 36px; }
+.form .btn { justify-self: start; }
+.form-status { font-size: 1rem; min-height: 1.4em; }
+@media (max-width: 560px) { .form .btn { justify-self: stretch; } }
