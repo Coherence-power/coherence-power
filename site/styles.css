@@ -85,13 +85,9 @@ p { margin: 0; }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; color: var(--ink); font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; }
 .brand svg { width: 34px; height: 22px; }
-.btn--small { min-height: 44px; padding: 8px 18px; font-size: 1.0625rem; white-space: nowrap; }
-@media (max-width: 420px) { .nav { gap: 12px; } .brand { font-size: 1.15rem; } .btn--small { padding-inline: 14px; } }
-
 /* ---------- Hero ---------- */
 .hero { padding-block: clamp(40px, 7vw, 96px) var(--section); }
-.hero-for { font-family: var(--font-tag); font-weight: 500; font-size: 1.0625rem; color: var(--blue); }
-.hero h1 { margin-top: 12px; font-size: var(--fs-display); line-height: 0.98; letter-spacing: -0.012em; max-width: 14em; text-wrap: balance; }
+.hero h1 { font-size: var(--fs-display); line-height: 0.98; letter-spacing: -0.012em; max-width: 14em; text-wrap: balance; }
 .hero-lead { margin-top: clamp(20px, 2.5vw, 32px); max-width: 60ch; font-size: var(--fs-lead); color: var(--ink-soft); }
 
 .cta { margin-top: clamp(36px, 5vw, 56px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
@@ -101,17 +97,15 @@ p { margin: 0; }
 /* Industry cards: link to a paper or case study; "coming soon" cards are muted and not links */
 .verticals { margin-top: clamp(48px, 6vw, 80px); scroll-margin-top: 24px; }
 .verticals h2 { font-size: var(--fs-h3); }
-.vcards { margin: 20px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.vcard > a, .vcard > div { display: flex; flex-direction: column; gap: 8px; height: 100%; padding: 20px; background: var(--sheet); border: 1.5px solid var(--ink); border-radius: var(--radius); color: var(--ink); text-decoration: none; }
-.vcard > a:hover { border-color: var(--blue); }
-.vcard > a:hover .vcard-title { color: var(--blue-deep); }
+.vcards { margin: 20px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 16px; }
+.vcard > a, .vcard > div { position: relative; display: flex; flex-direction: column; justify-content: center; gap: 6px; height: 100%; min-height: 112px; box-sizing: border-box; padding: 20px 52px 20px 20px; background: var(--sheet); border: 1.5px solid var(--ink); border-radius: var(--radius); color: var(--ink); text-decoration: none; }
+.vcard > a:hover { border-color: var(--blue); color: var(--blue-deep); }
 .vcard > a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-.vcard-name { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; line-height: 1.2; }
-.vcard-title { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-.vcard-meta { margin-top: auto; font-size: var(--fs-small); color: var(--ink-faint); }
+.vcard-name { font-family: var(--font-display); font-weight: 600; font-size: 1.375rem; line-height: 1.2; }
+.vcard-arrow { position: absolute; top: 18px; right: 18px; width: 20px; height: 20px; color: var(--blue); }
+.vcard-meta { font-size: var(--fs-small); color: var(--ink-faint); }
 .vcard--soon > div { background: transparent; border: 1.5px dashed var(--rule-strong); }
 .vcard--soon .vcard-name { color: var(--ink-soft); }
-.vcard--soon .vcard-meta { margin-top: 0; }
 @media (max-width: 900px) { .vcards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .vcards { grid-template-columns: minmax(0, 1fr); } }
 

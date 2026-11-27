@@ -10,7 +10,7 @@ Landing page for Coherence Power: one page with a "Book a demo" button.
 
 The button opens a short form (name, work email, company) that posts to Formspree. The form ID comes from the `FORMSPREE_FORM_ID` repo secret and is injected into `site/index.html` at deploy. Without JavaScript, or when previewing locally, the button falls back to an email to info@coherencepower.com.
 
-To send people to a scheduling link (Calendly, Cal.com, HubSpot) instead, change the two `href`s marked `data-demo` in `site/index.html` to the booking URL and remove the `data-demo` attribute.
+To send people to a scheduling link (Calendly, Cal.com, HubSpot) instead, change the `href` marked `data-demo` in `site/index.html` to the booking URL and remove the `data-demo` attribute.
 
 ## Preview locally
 
