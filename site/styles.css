@@ -91,7 +91,7 @@ p { margin: 0; }
 /* ---------- Hero ---------- */
 .hero { padding-block: clamp(40px, 7vw, 96px) var(--section); }
 .hero-for { font-family: var(--font-tag); font-weight: 500; font-size: 1.0625rem; color: var(--blue); }
-.hero h1 { margin-top: 12px; font-size: var(--fs-display); line-height: 0.98; letter-spacing: -0.012em; max-width: 13em; text-wrap: balance; }
+.hero h1 { margin-top: 12px; font-size: var(--fs-display); line-height: 0.98; letter-spacing: -0.012em; max-width: 16em; text-wrap: balance; }
 .hero-lead { margin-top: clamp(20px, 2.5vw, 32px); max-width: 60ch; font-size: var(--fs-lead); color: var(--ink-soft); }
 
 /* Two buying situations: a real pair, so ruled rows, not cards */
