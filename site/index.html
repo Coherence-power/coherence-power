@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coherence Power: what every machine in your plant costs to run</title>
+  <meta name="description" content="Coherence Power builds a physics-based model of your plant from your drawings and a walkthrough. You get the running cost of every major machine and a ranked list of fixes, without installing power meters.">
+  <meta name="theme-color" content="#f2f4f1">
+  <meta property="og:title" content="See what every machine in your plant costs to run, without installing a single meter">
+  <meta property="og:description" content="A physics-based model of your plant, built from your drawings and a walkthrough. Book a demo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.coherencepower.com/">
+  <meta property="og:image" content="https://www.coherencepower.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.coherencepower.com/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500&family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <span class="brand">
+        <svg viewBox="0 0 34 22" fill="none" aria-hidden="true">
+          <path d="M1 11c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--blue)"/>
+          <path d="M1 15c4-9 8-9 12 0s8 9 12 0 6-7 8-4" stroke-width="2.2" stroke-linecap="round" style="stroke: var(--ink)"/>
+        </svg>
+        Coherence Power
+      </span>
+      <a class="btn btn--primary btn--small" href="mailto:info@coherencepower.com?subject=Demo%20request" data-demo>Book a demo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <h1 id="hero-title">See what every machine in your plant costs to run, without installing a single meter.</h1>
+        <div class="hero-body">
+          <p>We build a physics-based model of your plant from your drawings, bills and one walkthrough. You get a running cost for every major pump, blower and line, plus a ranked list of what to fix.</p>
+          <a class="btn btn--primary" href="mailto:info@coherencepower.com?subject=Demo%20request" data-demo>Book a demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The cost map: an illustrative plant, drawn like a marked-up process drawing -->
+    <div class="sheet-wrap">
+      <div class="container">
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+          <defs>
+            <symbol id="sym-pump" viewBox="0 0 56 56"><circle cx="28" cy="28" r="17"/><path d="M19 15.5 43.5 28 19 40.5z"/></symbol>
+            <symbol id="sym-filter" viewBox="0 0 56 56"><rect x="13" y="8" width="30" height="40" rx="9"/><path d="M13 36 43 20" stroke-dasharray="4 3"/></symbol>
+            <symbol id="sym-comp" viewBox="0 0 56 56"><circle cx="28" cy="28" r="17"/><path d="M14 19.5 42 24.5M14 36.5 42 31.5"/></symbol>
+            <symbol id="sym-panel" viewBox="0 0 56 56"><rect x="11" y="11" width="34" height="34"/><path d="M11 11 45 45M45 11 11 45"/></symbol>
+          </defs>
+        </svg>
+
+        <figure class="sheet" aria-labelledby="sheet-title">
+          <div class="sheet-body">
+            <ol class="pid">
+              <li class="unit unit--line">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-pump"/></svg></span>
+                <span class="unit-tag">P-101 A/B</span>
+                <span class="unit-name">Intake pumps</span>
+                <span class="unit-spec">2 &times; 110 kW</span>
+                <span class="unit-cost"><mark>$176k</mark></span>
+                <span class="unit-share">a year, 10% of the bill</span>
+              </li>
+              <li class="unit unit--line">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-filter"/></svg></span>
+                <span class="unit-tag">F-201</span>
+                <span class="unit-name">Pretreatment and backwash</span>
+                <span class="unit-spec">120 kW</span>
+                <span class="unit-cost"><mark>$92k</mark></span>
+                <span class="unit-share">a year, 5%</span>
+              </li>
+              <li class="unit unit--line">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-pump"/></svg></span>
+                <span class="unit-tag">P-301 A/B</span>
+                <span class="unit-name">High-pressure pumps</span>
+                <span class="unit-spec">2 &times; 700 kW</span>
+                <span class="unit-cost"><mark>$1,086k</mark></span>
+                <span class="unit-share">a year, 59%</span>
+                <span class="unit-note">Pump B runs well off its best efficiency point. That costs $58k a year.</span>
+              </li>
+              <li class="unit unit--line is-last">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-pump"/></svg></span>
+                <span class="unit-tag">P-401 A/B</span>
+                <span class="unit-name">Product transfer pumps</span>
+                <span class="unit-spec">2 &times; 150 kW</span>
+                <span class="unit-cost"><mark>$221k</mark></span>
+                <span class="unit-share">a year, 12%</span>
+                <span class="unit-note">The tank is filled during the 4 to 9 pm peak most days. Moving it saves $74k a year.</span>
+              </li>
+              <li class="unit unit--aux">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-comp"/></svg></span>
+                <span class="unit-tag">C-501</span>
+                <span class="unit-name">Compressed air</span>
+                <span class="unit-spec">90 kW</span>
+                <span class="unit-cost"><mark>$74k</mark></span>
+                <span class="unit-share">a year, 4%</span>
+              </li>
+              <li class="unit unit--aux">
+                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-panel"/></svg></span>
+                <span class="unit-tag">MCC-6</span>
+                <span class="unit-name">Buildings and everything else</span>
+                <span class="unit-spec">Lighting, HVAC, dosing</span>
+                <span class="unit-cost"><mark>$191k</mark></span>
+                <span class="unit-share">a year, 10%</span>
+              </li>
+            </ol>
+          </div>
+          <dl class="titleblock">
+            <div><dt>Drawing</dt><dd id="sheet-title">Plant energy cost map</dd></div>
+            <div><dt>Plant</dt><dd>Seawater RO, illustrative example</dd></div>
+            <div><dt>Electricity</dt><dd>$1.84M a year</dd></div>
+            <div><dt>Built from</dt><dd>Drawings, nameplates, bills and one walkthrough</dd></div>
+            <div><dt>Meters installed</dt><dd>None</dd></div>
+          </dl>
+        </figure>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>Built on Stanford and U.S. Department of Energy research. <a href="https://github.com/flex-pse/flex-pse" target="_blank" rel="noopener">Open-source models</a>.</p>
+      <p>&copy; <span data-year>2026</span> Coherence Power, Palo Alto, California &middot; <a href="mailto:info@coherencepower.com">info@coherencepower.com</a></p>
+    </div>
+  </footer>
+
+  <!-- Demo request. Without JS (or before the form ID is injected) the buttons fall back to email. -->
+  <dialog class="demo" id="demo" aria-labelledby="demo-title">
+    <!-- action placeholder is replaced with the FORMSPREE_FORM_ID secret at deploy (.github/workflows/pages.yml) -->
+    <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-demo-form>
+      <div class="demo-head">
+        <h2 id="demo-title">Book a demo</h2>
+        <button class="demo-close" type="button" aria-label="Close" data-demo-close>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15"/></svg>
+        </button>
+      </div>
+      <p class="demo-intro">Leave your details and we'll be in touch within two business days to set up a time.</p>
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-email">Work email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="f-company">Company or facility</label>
+        <input id="f-company" name="company" type="text" autocomplete="organization">
+      </div>
+      <input type="hidden" name="_subject" value="Demo request: coherencepower.com">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
+      <button class="btn btn--primary" type="submit">Request a demo</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
