@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Coherence Power: what every machine in your plant costs to run</title>
-  <meta name="description" content="Coherence Power builds a physics-based model of your plant from your drawings and a walkthrough. You get the running cost of every major machine and a ranked list of fixes, without installing power meters.">
+  <title>Coherence Power: know the payback before you commit the capital</title>
+  <meta name="description" content="Coherence Power models your plant from drawings, bills and one walkthrough, so you can test energy upgrades and expansions before you commit capital.">
   <meta name="theme-color" content="#f2f4f1">
-  <meta property="og:title" content="See what every machine in your plant costs to run, without installing a single meter">
-  <meta property="og:description" content="A physics-based model of your plant, built from your drawings and a walkthrough. Book a demo.">
+  <meta property="og:title" content="Know the payback before you commit the capital">
+  <meta property="og:description" content="For energy-intensive plants cutting costs or planning an expansion. Book a demo.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.coherencepower.com/">
   <meta property="og:image" content="https://www.coherencepower.com/assets/og-image.png">
@@ -36,96 +36,43 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
-        <h1 id="hero-title">See what every machine in your plant costs to run, without installing a single meter.</h1>
-        <div class="hero-body">
-          <p>We build a physics-based model of your plant from your drawings, bills and one walkthrough. You get a running cost for every major pump, blower and line, plus a ranked list of what to fix.</p>
+        <p class="hero-for">For owners and managers of energy-intensive plants</p>
+        <h1 id="hero-title">Know the payback before you commit the capital.</h1>
+        <p class="hero-lead">We build a physics-based model of your plant from your drawings, bills and one walkthrough. Then we test the investment in the model before you make it in the real plant.</p>
+
+        <ul class="cases">
+          <li>
+            <h2>Cutting energy costs?</h2>
+            <p>See what every major machine costs to run, and get a ranked list of fixes with cost, savings and payback. Most plants have savings that need no capital at all.</p>
+          </li>
+          <li>
+            <h2>Planning an expansion?</h2>
+            <p>Model new lines, storage and on-site power against your tariff and the connection you already have. Know what the plant can run before you size the upgrade.</p>
+          </li>
+        </ul>
+
+        <div class="cta">
           <a class="btn btn--primary" href="mailto:info@coherencepower.com?subject=Demo%20request" data-demo>Book a demo</a>
+          <p>A 30-minute call with our engineers about your plant and your power bill.</p>
         </div>
+
+        <section class="research" aria-labelledby="research-title">
+          <h2 id="research-title">The research behind the models</h2>
+          <p class="research-figures">From pilots with California facilities: <strong>10&ndash;15%</strong> lower annual power costs, <strong>38%</strong> less capital spent on energy storage, <strong>18%</strong> IRR on committed capital.</p>
+          <ul>
+            <li><a href="https://doi.org/10.1038/s44221-024-00316-4" target="_blank" rel="noopener">Valuing energy flexibility from water systems</a>. Nature Water, 2024</li>
+            <li><a href="https://doi.org/10.1021/acssuschemeng.4c06353" target="_blank" rel="noopener">Optimizing desalination operations for energy flexibility</a>. ACS Sustainable Chemistry &amp; Engineering, 2024</li>
+            <li><a href="https://doi.org/10.1021/acs.est.4c09773" target="_blank" rel="noopener">Load-shifting strategies for cost-effective emission reductions at wastewater facilities</a>. Environmental Science &amp; Technology, 2025</li>
+            <li><a href="https://github.com/flex-pse/flex-pse" target="_blank" rel="noopener">flex-pse</a>. Our open-source modeling code, built on U.S. Department of Energy process modeling work</li>
+          </ul>
+        </section>
       </div>
     </section>
-
-    <!-- The cost map: an illustrative plant, drawn like a marked-up process drawing -->
-    <div class="sheet-wrap">
-      <div class="container">
-        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-          <defs>
-            <symbol id="sym-pump" viewBox="0 0 56 56"><circle cx="28" cy="28" r="17"/><path d="M19 15.5 43.5 28 19 40.5z"/></symbol>
-            <symbol id="sym-filter" viewBox="0 0 56 56"><rect x="13" y="8" width="30" height="40" rx="9"/><path d="M13 36 43 20" stroke-dasharray="4 3"/></symbol>
-            <symbol id="sym-comp" viewBox="0 0 56 56"><circle cx="28" cy="28" r="17"/><path d="M14 19.5 42 24.5M14 36.5 42 31.5"/></symbol>
-            <symbol id="sym-panel" viewBox="0 0 56 56"><rect x="11" y="11" width="34" height="34"/><path d="M11 11 45 45M45 11 11 45"/></symbol>
-          </defs>
-        </svg>
-
-        <figure class="sheet" aria-labelledby="sheet-title">
-          <div class="sheet-body">
-            <ol class="pid">
-              <li class="unit unit--line">
-                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-pump"/></svg></span>
-                <span class="unit-tag">P-101 A/B</span>
-                <span class="unit-name">Intake pumps</span>
-                <span class="unit-spec">2 &times; 110 kW</span>
-                <span class="unit-cost"><mark>$176k</mark></span>
-                <span class="unit-share">a year, 10% of the bill</span>
-              </li>
-              <li class="unit unit--line">
-                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-filter"/></svg></span>
-                <span class="unit-tag">F-201</span>
-                <span class="unit-name">Pretreatment and backwash</span>
-                <span class="unit-spec">120 kW</span>
-                <span class="unit-cost"><mark>$92k</mark></span>
-                <span class="unit-share">a year, 5%</span>
-              </li>
-              <li class="unit unit--line">
-                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-pump"/></svg></span>
-                <span class="unit-tag">P-301 A/B</span>
-                <span class="unit-name">High-pressure pumps</span>
-                <span class="unit-spec">2 &times; 700 kW</span>
-                <span class="unit-cost"><mark>$1,086k</mark></span>
-                <span class="unit-share">a year, 59%</span>
-                <span class="unit-note">Pump B runs well off its best efficiency point. That costs $58k a year.</span>
-              </li>
-              <li class="unit unit--line is-last">
-                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-pump"/></svg></span>
-                <span class="unit-tag">P-401 A/B</span>
-                <span class="unit-name">Product transfer pumps</span>
-                <span class="unit-spec">2 &times; 150 kW</span>
-                <span class="unit-cost"><mark>$221k</mark></span>
-                <span class="unit-share">a year, 12%</span>
-                <span class="unit-note">The tank is filled during the 4 to 9 pm peak most days. Moving it saves $74k a year.</span>
-              </li>
-              <li class="unit unit--aux">
-                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-comp"/></svg></span>
-                <span class="unit-tag">C-501</span>
-                <span class="unit-name">Compressed air</span>
-                <span class="unit-spec">90 kW</span>
-                <span class="unit-cost"><mark>$74k</mark></span>
-                <span class="unit-share">a year, 4%</span>
-              </li>
-              <li class="unit unit--aux">
-                <span class="unit-symbol"><svg aria-hidden="true"><use href="#sym-panel"/></svg></span>
-                <span class="unit-tag">MCC-6</span>
-                <span class="unit-name">Buildings and everything else</span>
-                <span class="unit-spec">Lighting, HVAC, dosing</span>
-                <span class="unit-cost"><mark>$191k</mark></span>
-                <span class="unit-share">a year, 10%</span>
-              </li>
-            </ol>
-          </div>
-          <dl class="titleblock">
-            <div><dt>Drawing</dt><dd id="sheet-title">Plant energy cost map</dd></div>
-            <div><dt>Plant</dt><dd>Seawater RO, illustrative example</dd></div>
-            <div><dt>Electricity</dt><dd>$1.84M a year</dd></div>
-            <div><dt>Built from</dt><dd>Drawings, nameplates, bills and one walkthrough</dd></div>
-            <div><dt>Meters installed</dt><dd>None</dd></div>
-          </dl>
-        </figure>
-      </div>
-    </div>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <p>Built on Stanford and U.S. Department of Energy research. <a href="https://github.com/flex-pse/flex-pse" target="_blank" rel="noopener">Open-source models</a>.</p>
+      <p>Modeling from Stanford and U.S. Department of Energy research.</p>
       <p>&copy; <span data-year>2026</span> Coherence Power, Palo Alto, California &middot; <a href="mailto:info@coherencepower.com">info@coherencepower.com</a></p>
     </div>
   </footer>
@@ -152,6 +99,16 @@
       <div class="field">
         <label for="f-company">Company or facility</label>
         <input id="f-company" name="company" type="text" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="f-goal">What are you working on?</label>
+        <select id="f-goal" name="goal">
+          <option value="">Select one</option>
+          <option>Cutting energy costs</option>
+          <option>Planning an expansion</option>
+          <option>Both</option>
+          <option>Something else</option>
+        </select>
       </div>
       <input type="hidden" name="_subject" value="Demo request: coherencepower.com">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
