@@ -32,10 +32,10 @@
       .then(function (r) {
         if (!r.ok) throw new Error('Bad response');
         form.reset();
-        status.textContent = "Thanks. We'll be in touch within two business days.";
+        status.textContent = "Thanks. We'll email you within two business days.";
       })
       .catch(function () {
-        status.textContent = 'Something went wrong. Please email info@coherencepower.com.';
+        status.textContent = 'That didn\'t send. Email us at info@coherencepower.com instead.';
       })
       .finally(function () { submit.disabled = false; });
   });
